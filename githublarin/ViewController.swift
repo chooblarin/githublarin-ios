@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup aqfter loading the view, typically from a nib.
+        Alamofire.request(.GET, "https://api.github.com/repos/vmg/redcarpet/issues?state=closed")
+            .responseJSON() {response in
+                if response.result.isSuccess {
+                    print(response.result.value)
+                }
+            }
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +27,4 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
-
