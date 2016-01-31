@@ -14,6 +14,9 @@
 		FA54B1C11C5A120C00D37363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA54B1BF1C5A120C00D37363 /* LaunchScreen.storyboard */; };
 		FA54B1CC1C5A120C00D37363 /* githublarinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54B1CB1C5A120C00D37363 /* githublarinTests.swift */; };
 		FA54B1D71C5A14ED00D37363 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA54B1D61C5A14ED00D37363 /* Alamofire.framework */; };
+		FAFF407E1C5DF32A00DD760A /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407B1C5DF32A00DD760A /* Gloss.framework */; };
+		FAFF407F1C5DF32A00DD760A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */; };
+		FAFF40801C5DF32A00DD760A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407D1C5DF32A00DD760A /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		FA54B1CB1C5A120C00D37363 /* githublarinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githublarinTests.swift; sourceTree = "<group>"; };
 		FA54B1CD1C5A120C00D37363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA54B1D61C5A14ED00D37363 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		FAFF407B1C5DF32A00DD760A /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
+		FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		FAFF407D1C5DF32A00DD760A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA54B1D71C5A14ED00D37363 /* Alamofire.framework in Frameworks */,
+				FAFF407E1C5DF32A00DD760A /* Gloss.framework in Frameworks */,
+				FAFF407F1C5DF32A00DD760A /* RxCocoa.framework in Frameworks */,
+				FAFF40801C5DF32A00DD760A /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +71,9 @@
 		FA54B1AA1C5A120C00D37363 = {
 			isa = PBXGroup;
 			children = (
+				FAFF407B1C5DF32A00DD760A /* Gloss.framework */,
+				FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */,
+				FAFF407D1C5DF32A00DD760A /* RxSwift.framework */,
 				FA54B1D61C5A14ED00D37363 /* Alamofire.framework */,
 				FA54B1B51C5A120C00D37363 /* githublarin */,
 				FA54B1CA1C5A120C00D37363 /* githublarinTests */,
@@ -205,6 +217,9 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Gloss.framework",
 			);
 			outputPaths = (
 			);
