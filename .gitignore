@@ -84,3 +84,4 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
+Configuration.swift
