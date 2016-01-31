@@ -36,26 +36,5 @@ class GitHubAPIClient {
                 guard let items = responseJson["items"] as? [AnyObject] else { throw commonError("Json parse error")  }
                 return items
             })
-//            .map { json -> [Repository] in
-//                guard let items = json["items"] as? [AnyObject] else { throw commonError("Json parse error")  }
-//                let repositories = items.map({ json -> Repository in
-//                    if let repository = Repository(json) {
-//                        return repository
-//                    } else {
-//                        commonError("Json parse error!")
-//                    }
-//                })
-//                return repositories
-//            }
-        
-//        Alamofire.request(.GET, GitHubApiURL + "/search/repositories?q=" + searchKey)
-//            .responseJSON {response in
-//                switch response.result {
-//                case .Success:
-//                    print(response.result.value)
-//                case .Failure(let error):
-//                    print(error.description)
-//                }
-//            }
     }
 }
