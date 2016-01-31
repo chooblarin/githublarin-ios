@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Gloss
 
 class ViewController: UIViewController {
 
@@ -16,11 +17,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // GitHubAPIClient.sharedInstance.searchRepository("RxJava")
-        GitHubAPIClient.sharedInstance.demo()
+        GitHubAPIClient.sharedInstance.searchRepository("RxJava")
             .observeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
-            .subscribeNext { (object) -> Void in
-                print(object)
+            .subscribeNext { anyobjects -> Void in
+                anyobjects.forEach({ anyobject -> () in
+                    let json = anyobject as! JSON
+                    let repository = Repository(json: json)
+                    print(repository?.fullName)
+                })
             }.addDisposableTo(self.disposeBag)
     }
 

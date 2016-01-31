@@ -11,15 +11,15 @@ import Gloss
 
 struct Repository: Decodable {
 
-    let id: Int
-    let name: String
+    let id: Int?
+    let name: String?
     let fullName: String
     let description: String?
 
     init?(json: JSON) {
         guard let id: Int = "id" <~~ json,
             let name: String = "name" <~~ json,
-            let fullName: String = "fullName" <~~ json
+            let fullName: String = "full_name" <~~ json
             else { return nil }
 
         self.id = id
