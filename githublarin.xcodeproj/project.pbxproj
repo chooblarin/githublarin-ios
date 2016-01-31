@@ -17,6 +17,10 @@
 		FAFF407E1C5DF32A00DD760A /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407B1C5DF32A00DD760A /* Gloss.framework */; };
 		FAFF407F1C5DF32A00DD760A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */; };
 		FAFF40801C5DF32A00DD760A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407D1C5DF32A00DD760A /* RxSwift.framework */; };
+		FAFF40821C5DF3BA00DD760A /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40811C5DF3BA00DD760A /* Configuration.swift */; };
+		FAFF40841C5DF47F00DD760A /* GitHubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40831C5DF47F00DD760A /* GitHubApiClient.swift */; };
+		FAFF40861C5DF67500DD760A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40851C5DF67500DD760A /* Repository.swift */; };
+		FAFF40881C5E06C200DD760A /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40871C5E06C200DD760A /* Dependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		FAFF407B1C5DF32A00DD760A /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FAFF407D1C5DF32A00DD760A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		FAFF40811C5DF3BA00DD760A /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		FAFF40831C5DF47F00DD760A /* GitHubApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClient.swift; sourceTree = "<group>"; };
+		FAFF40851C5DF67500DD760A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		FAFF40871C5E06C200DD760A /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +101,15 @@
 		FA54B1B51C5A120C00D37363 /* githublarin */ = {
 			isa = PBXGroup;
 			children = (
+				FAFF40891C5E06DB00DD760A /* API */,
 				FA54B1B61C5A120C00D37363 /* AppDelegate.swift */,
 				FA54B1B81C5A120C00D37363 /* ViewController.swift */,
+				FAFF40851C5DF67500DD760A /* Repository.swift */,
 				FA54B1BA1C5A120C00D37363 /* Main.storyboard */,
 				FA54B1BD1C5A120C00D37363 /* Assets.xcassets */,
 				FA54B1BF1C5A120C00D37363 /* LaunchScreen.storyboard */,
 				FA54B1C21C5A120C00D37363 /* Info.plist */,
+				FAFF40811C5DF3BA00DD760A /* Configuration.swift */,
 			);
 			path = githublarin;
 			sourceTree = "<group>";
@@ -110,6 +121,15 @@
 				FA54B1CD1C5A120C00D37363 /* Info.plist */,
 			);
 			path = githublarinTests;
+			sourceTree = "<group>";
+		};
+		FAFF40891C5E06DB00DD760A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FAFF40831C5DF47F00DD760A /* GitHubApiClient.swift */,
+				FAFF40871C5E06C200DD760A /* Dependencies.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +254,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFF40881C5E06C200DD760A /* Dependencies.swift in Sources */,
+				FAFF40841C5DF47F00DD760A /* GitHubApiClient.swift in Sources */,
+				FAFF40821C5DF3BA00DD760A /* Configuration.swift in Sources */,
+				FAFF40861C5DF67500DD760A /* Repository.swift in Sources */,
 				FA54B1B91C5A120C00D37363 /* ViewController.swift in Sources */,
 				FA54B1B71C5A120C00D37363 /* AppDelegate.swift in Sources */,
 			);

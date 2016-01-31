@@ -7,19 +7,21 @@
 //
 
 import UIKit
-import Alamofire
+import RxSwift
 
 class ViewController: UIViewController {
 
+    let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup aqfter loading the view, typically from a nib.
-        Alamofire.request(.GET, "https://api.github.com/repos/vmg/redcarpet/issues?state=closed")
-            .responseJSON() {response in
-                if response.result.isSuccess {
-                    print(response.result.value)
-                }
-            }
+        
+        // GitHubAPIClient.sharedInstance.searchRepository("RxJava")
+        GitHubAPIClient.sharedInstance.demo()
+            .observeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
+            .subscribeNext { (object) -> Void in
+                print(object)
+            }.addDisposableTo(self.disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
