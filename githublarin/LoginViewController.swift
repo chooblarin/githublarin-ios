@@ -5,6 +5,7 @@ class LoginViewController: UIViewController {
 
     // MARK: - Properties
     let disposeBag = DisposeBag()
+    let apiClient = GitHubAPIClient.sharedInstance
 
     // MARK: - IBOutlets
     @IBOutlet weak var usernameTextField: UITextField!
@@ -22,26 +23,29 @@ class LoginViewController: UIViewController {
         let enableButton = Observable.combineLatest(usernameValidation, passwordValidation) { $0 && $1 }
         enableButton.bindTo(signinButton.rx_enabled).addDisposableTo(disposeBag)
 
-        signinButton.rx_tap.subscribe { (event) -> Void in
-            print(self.usernameTextField.text)
-            print(self.passwordTextField.text)
-        }.addDisposableTo(disposeBag)
+        signinButton.rx_tap
+            .flatMap { self.apiClient.login(
+                username: self.usernameTextField.text!,
+                password: self.passwordTextField.text!)
+            }
+            .subscribe { event -> Void in
+                switch event {
+                case .Next(let user):
+                    UserManager.sharedInstance.user = user
+                    let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: NSBundle.mainBundle())
+                    let homeViewController = storyboard.instantiateInitialViewController() as! UITabBarController
+                    self.presentViewController(homeViewController, animated: true, completion: nil)
+
+                case .Error(let error):
+                    print(error)
+
+                case .Completed: break
+                }
+            }.addDisposableTo(disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
