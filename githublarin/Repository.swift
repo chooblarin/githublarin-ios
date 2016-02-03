@@ -1,11 +1,3 @@
-//
-//  Repository.swift
-//  githublarin
-//
-//  Created by Sota Hatakeyama on 2016/01/31.
-//  Copyright © 2016年 chooblarin. All rights reserved.
-//
-
 import Foundation
 import Gloss
 

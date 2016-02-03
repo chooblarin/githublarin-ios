@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  githublarin
-//
-//  Created by Sota Hatakeyama on 2016/01/28.
-//  Copyright © 2016年 chooblarin. All rights reserved.
-//
-
 import UIKit
 import RxSwift
 import Gloss

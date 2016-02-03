@@ -24,7 +24,6 @@
 		FAFF407E1C5DF32A00DD760A /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407B1C5DF32A00DD760A /* Gloss.framework */; };
 		FAFF407F1C5DF32A00DD760A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */; };
 		FAFF40801C5DF32A00DD760A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407D1C5DF32A00DD760A /* RxSwift.framework */; };
-		FAFF40821C5DF3BA00DD760A /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40811C5DF3BA00DD760A /* Configuration.swift */; };
 		FAFF40841C5DF47F00DD760A /* GitHubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40831C5DF47F00DD760A /* GitHubApiClient.swift */; };
 		FAFF40861C5DF67500DD760A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40851C5DF67500DD760A /* Repository.swift */; };
 		FAFF40881C5E06C200DD760A /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40871C5E06C200DD760A /* Dependencies.swift */; };
@@ -62,7 +61,6 @@
 		FAFF407B1C5DF32A00DD760A /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FAFF407D1C5DF32A00DD760A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		FAFF40811C5DF3BA00DD760A /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		FAFF40831C5DF47F00DD760A /* GitHubApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClient.swift; sourceTree = "<group>"; };
 		FAFF40851C5DF67500DD760A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		FAFF40871C5E06C200DD760A /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
@@ -102,10 +100,7 @@
 		FA54B1AA1C5A120C00D37363 = {
 			isa = PBXGroup;
 			children = (
-				FAFF407B1C5DF32A00DD760A /* Gloss.framework */,
-				FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */,
-				FAFF407D1C5DF32A00DD760A /* RxSwift.framework */,
-				FA54B1D61C5A14ED00D37363 /* Alamofire.framework */,
+				FAE49BBE1C623217009A02BC /* Carthage */,
 				FA54B1B51C5A120C00D37363 /* githublarin */,
 				FA54B1CA1C5A120C00D37363 /* githublarinTests */,
 				FA54B1B41C5A120C00D37363 /* Products */,
@@ -133,7 +128,6 @@
 				FA54B1BD1C5A120C00D37363 /* Assets.xcassets */,
 				FA54B1BF1C5A120C00D37363 /* LaunchScreen.storyboard */,
 				FA54B1C21C5A120C00D37363 /* Info.plist */,
-				FAFF40811C5DF3BA00DD760A /* Configuration.swift */,
 				FA06CFE01C5E3D6000C6341F /* RepositoryTableViewCell.swift */,
 				FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */,
 				FA0D3BE21C5F2193002C0307 /* GistViewController.swift */,
@@ -150,6 +144,17 @@
 				FA54B1CD1C5A120C00D37363 /* Info.plist */,
 			);
 			path = githublarinTests;
+			sourceTree = "<group>";
+		};
+		FAE49BBE1C623217009A02BC /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				FAFF407B1C5DF32A00DD760A /* Gloss.framework */,
+				FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */,
+				FAFF407D1C5DF32A00DD760A /* RxSwift.framework */,
+				FA54B1D61C5A14ED00D37363 /* Alamofire.framework */,
+			);
+			name = Carthage;
 			sourceTree = "<group>";
 		};
 		FAFF40891C5E06DB00DD760A /* API */ = {
@@ -291,7 +296,6 @@
 				FAFF40841C5DF47F00DD760A /* GitHubApiClient.swift in Sources */,
 				FA06CFE11C5E3D6000C6341F /* RepositoryTableViewCell.swift in Sources */,
 				FA0D3BDF1C5F211D002C0307 /* HomeViewController.swift in Sources */,
-				FAFF40821C5DF3BA00DD760A /* Configuration.swift in Sources */,
 				FAFF40861C5DF67500DD760A /* Repository.swift in Sources */,
 				FA0D3BE31C5F2193002C0307 /* GistViewController.swift in Sources */,
 				FA54B1B91C5A120C00D37363 /* RepositoryListViewController.swift in Sources */,
