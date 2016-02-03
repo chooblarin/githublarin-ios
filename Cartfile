@@ -1,3 +1,4 @@
 github "ReactiveX/RxSwift" ~> 2.0
 github "Alamofire/Alamofire" ~> 3.0
 github "hkellaway/Gloss"
+github "realm/realm-cocoa" ~> 0.97.1

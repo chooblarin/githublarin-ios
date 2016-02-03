@@ -1,11 +1,3 @@
-//
-//  GitHubApiClient.swift
-//  githublarin
-//
-//  Created by Sota Hatakeyama on 2016/01/31.
-//  Copyright © 2016年 chooblarin. All rights reserved.
-//
-
 import Alamofire
 import Gloss
 import RxSwift
@@ -51,11 +43,13 @@ class GitHubAPIClient {
         }
     }
 
-    func searchRepository(searchKey: String) -> Observable<[AnyObject]> {
+    func searchRepository(searchKey: String) -> Observable<[Repository]> {
         return request(.GET, path: "/search/repositories?q=" + searchKey)
-            .map({ responseJson -> [AnyObject] in
-                guard let items = responseJson["items"] as? [AnyObject] else { throw commonError("Json parse error")  }
-                return items
-            })
+            .map { $0["items"] as! [AnyObject] }
+            .flatMap { $0.toObservable() }
+            .map { Repository(json: $0 as! JSON)! }
+            .toArray()
+            .subscribeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
+            .observeOn(Dependencies.sharedDependencies.mainScheduler)
     }
 }

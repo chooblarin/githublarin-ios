@@ -1,3 +1,4 @@
 github "Alamofire/Alamofire" "3.1.5"
 github "hkellaway/Gloss" "0.6.2"
 github "ReactiveX/RxSwift" "2.1.0"
+github "realm/realm-cocoa" "v0.97.1"

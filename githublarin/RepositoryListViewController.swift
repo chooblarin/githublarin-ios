@@ -56,16 +56,8 @@ class RepositoryListViewController: UIViewController, UITableViewDataSource, UIT
 
     func loadRepository() {
         GitHubAPIClient.sharedInstance.searchRepository("RxJava")
-            .observeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
-            .subscribeNext { anyobjects -> Void in
-                anyobjects.map({ anyobject -> Repository? in
-                    let json = anyobject as! JSON
-                    return Repository(json: json)
-                }).forEach({ repository -> () in
-                    if let repository = repository {
-                        self.repositories.append(repository)
-                    }
-                })
+            .subscribeNext { repositories -> Void in
+                self.repositories = repositories
             }.addDisposableTo(self.disposeBag)
     }
 }

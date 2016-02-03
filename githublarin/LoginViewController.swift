@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
             .subscribe { event -> Void in
                 switch event {
                 case .Next(let user):
-                    UserManager.sharedInstance.user = user
+                    SessionManager.sharedInstance.user = user
                     let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: NSBundle.mainBundle())
                     let homeViewController = storyboard.instantiateInitialViewController() as! UITabBarController
                     self.presentViewController(homeViewController, animated: true, completion: nil)
