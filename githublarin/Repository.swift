@@ -15,6 +15,7 @@ struct Repository: Decodable {
     let name: String?
     let fullName: String
     let description: String?
+    let htmlUrl: String?
 
     init?(json: JSON) {
         guard let id: Int = "id" <~~ json,
@@ -25,7 +26,7 @@ struct Repository: Decodable {
         self.id = id
         self.name = name
         self.fullName = fullName
-
+        self.htmlUrl = "html_url" <~~ json
         self.description = "description" <~~ json
     }
 }

@@ -11,7 +11,6 @@ import UIKit
 class RepositoryTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
-
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var updatedAtLabel: UILabel!
@@ -21,8 +20,7 @@ class RepositoryTableViewCell: UITableViewCell {
 
     // MARK: Properties
 
-    var viewModel: Repository?
-    {
+    var viewModel: Repository? {
         didSet {
             guard let viewModel = viewModel else { return }
             fullNameLabel.text = viewModel.fullName

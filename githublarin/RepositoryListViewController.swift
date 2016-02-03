@@ -10,24 +10,29 @@ import UIKit
 import RxSwift
 import Gloss
 
-class ViewController: UIViewController, UITableViewDataSource {
+class RepositoryListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - IBOutlets
-
-    @IBOutlet weak var repositoryTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Properties
+    var repositoryViewController: RepositoryViewController!
 
-    var repositories = [Repository]()
-    {
-        didSet { self.repositoryTableView.reloadData() }
+    var repositories = [Repository]() {
+        didSet { self.tableView.reloadData() }
     }
     let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        repositoryTableView.dataSource = self
+        let storyboard: UIStoryboard = UIStoryboard(name: "Repository", bundle: NSBundle.mainBundle())
+        if let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController {
+            repositoryViewController = navigationController.viewControllers.first as! RepositoryViewController
+        }
+
+        tableView.dataSource = self
+        tableView.delegate = self
         loadRepository()
     }
 
@@ -43,10 +48,18 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identifier = "RepositoryTableViewCell"
-        let cell = repositoryTableView.dequeueReusableCellWithIdentifier(identifier) as! RepositoryTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! RepositoryTableViewCell
         let repository = repositories[indexPath.row]
         cell.viewModel = repository
         return cell
+    }
+
+    // MARK: - UITableViewDelegate
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let repository = repositories[indexPath.row]
+        repositoryViewController?.repository = repository
+        self.navigationController?.pushViewController(repositoryViewController!, animated: true)
     }
 
     func loadRepository() {
