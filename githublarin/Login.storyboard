@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oli-mi-c7F">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tds-tQ-5PI">
+            <objects>
+                <viewController id="oli-mi-c7F" customClass="LoginViewController" customModule="githublarin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9jP-Yn-6pk"/>
+                        <viewControllerLayoutGuide type="bottom" id="uEq-kE-EcW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Ss-19-6Sb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHublarin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLr-bd-w3b">
+                                <rect key="frame" x="215" y="73" width="169" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="XTF-B2-SXD">
+                                <rect key="frame" x="64" y="210" width="472" height="84"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bxi-El-TiE">
+                                        <rect key="frame" x="0.0" y="0.0" width="472" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWr-w3-OpK">
+                                        <rect key="frame" x="0.0" y="54" width="472" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ka9-Cz-lhb">
+                                <rect key="frame" x="190" y="342" width="220" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="wp0-uY-0wa"/>
+                                </constraints>
+                                <state key="normal" title="Sign in"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XTF-B2-SXD" secondAttribute="trailing" constant="64" id="9rZ-oJ-djw"/>
+                            <constraint firstItem="XTF-B2-SXD" firstAttribute="leading" secondItem="4Ss-19-6Sb" secondAttribute="leading" constant="64" id="FvF-vq-gfN"/>
+                            <constraint firstItem="ka9-Cz-lhb" firstAttribute="centerX" secondItem="4Ss-19-6Sb" secondAttribute="centerX" id="OtC-WL-aRx"/>
+                            <constraint firstItem="ka9-Cz-lhb" firstAttribute="top" secondItem="XTF-B2-SXD" secondAttribute="bottom" constant="48" id="Rlz-kB-Fei"/>
+                            <constraint firstItem="XTF-B2-SXD" firstAttribute="top" secondItem="BLr-bd-w3b" secondAttribute="bottom" constant="96" id="iG8-vC-cuv"/>
+                            <constraint firstItem="XTF-B2-SXD" firstAttribute="centerY" secondItem="4Ss-19-6Sb" secondAttribute="centerY" constant="-48" id="tcZ-96-KiM"/>
+                            <constraint firstItem="BLr-bd-w3b" firstAttribute="centerX" secondItem="4Ss-19-6Sb" secondAttribute="centerX" id="wba-Pm-bsO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="mWr-w3-OpK" id="ydv-Nz-1zp"/>
+                        <outlet property="signinButton" destination="ka9-Cz-lhb" id="mhH-OI-Z8R"/>
+                        <outlet property="usernameTextField" destination="Bxi-El-TiE" id="kEa-kZ-XRr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzJ-4s-qcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="358"/>
+        </scene>
+    </scenes>
+</document>

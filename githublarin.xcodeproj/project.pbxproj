@@ -21,6 +21,8 @@
 		FA54B1C11C5A120C00D37363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA54B1BF1C5A120C00D37363 /* LaunchScreen.storyboard */; };
 		FA54B1CC1C5A120C00D37363 /* githublarinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54B1CB1C5A120C00D37363 /* githublarinTests.swift */; };
 		FA54B1D71C5A14ED00D37363 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA54B1D61C5A14ED00D37363 /* Alamofire.framework */; };
+		FAB24B1F1C62376F00F51394 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB24B1E1C62376F00F51394 /* Login.storyboard */; };
+		FAB24B211C62390E00F51394 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B201C62390E00F51394 /* LoginViewController.swift */; };
 		FAFF407E1C5DF32A00DD760A /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407B1C5DF32A00DD760A /* Gloss.framework */; };
 		FAFF407F1C5DF32A00DD760A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */; };
 		FAFF40801C5DF32A00DD760A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407D1C5DF32A00DD760A /* RxSwift.framework */; };
@@ -58,6 +60,8 @@
 		FA54B1CB1C5A120C00D37363 /* githublarinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githublarinTests.swift; sourceTree = "<group>"; };
 		FA54B1CD1C5A120C00D37363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA54B1D61C5A14ED00D37363 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		FAB24B1E1C62376F00F51394 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		FAB24B201C62390E00F51394 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAFF407B1C5DF32A00DD760A /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FAFF407D1C5DF32A00DD760A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				FA06CFE01C5E3D6000C6341F /* RepositoryTableViewCell.swift */,
 				FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */,
 				FA0D3BE21C5F2193002C0307 /* GistViewController.swift */,
+				FAB24B221C62392D00F51394 /* Login */,
 				FA0412841C61EE4800F5CE01 /* RepositoryViewController.swift */,
 				FA0412861C61EE7F00F5CE01 /* Repository.storyboard */,
 			);
@@ -144,6 +149,15 @@
 				FA54B1CD1C5A120C00D37363 /* Info.plist */,
 			);
 			path = githublarinTests;
+			sourceTree = "<group>";
+		};
+		FAB24B221C62392D00F51394 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FAB24B201C62390E00F51394 /* LoginViewController.swift */,
+				FAB24B1E1C62376F00F51394 /* Login.storyboard */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		FAE49BBE1C623217009A02BC /* Carthage */ = {
@@ -250,6 +264,7 @@
 			files = (
 				FA54B1C11C5A120C00D37363 /* LaunchScreen.storyboard in Resources */,
 				FA0412871C61EE7F00F5CE01 /* Repository.storyboard in Resources */,
+				FAB24B1F1C62376F00F51394 /* Login.storyboard in Resources */,
 				FA54B1BE1C5A120C00D37363 /* Assets.xcassets in Resources */,
 				FA54B1BC1C5A120C00D37363 /* RepositoryList.storyboard in Resources */,
 				FA0D3BE51C5F21D0002C0307 /* Home.storyboard in Resources */,
@@ -300,6 +315,7 @@
 				FA0D3BE31C5F2193002C0307 /* GistViewController.swift in Sources */,
 				FA54B1B91C5A120C00D37363 /* RepositoryListViewController.swift in Sources */,
 				FA54B1B71C5A120C00D37363 /* AppDelegate.swift in Sources */,
+				FAB24B211C62390E00F51394 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
