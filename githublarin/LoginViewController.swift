@@ -23,17 +23,16 @@ class LoginViewController: UIViewController {
         let enableButton = Observable.combineLatest(usernameValidation, passwordValidation) { $0 && $1 }
         enableButton.bindTo(signinButton.rx_enabled).addDisposableTo(disposeBag)
 
-        signinButton.rx_tap
+        signinButton.rx_tap.shareReplay(1)
             .flatMap { self.apiClient.login(
                 username: self.usernameTextField.text!,
                 password: self.passwordTextField.text!)
             }
             .subscribe { event -> Void in
                 switch event {
-                case .Next(let user):
-                    SessionManager.sharedInstance.user = user
+                case .Next(_):
                     let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: NSBundle.mainBundle())
-                    let homeViewController = storyboard.instantiateInitialViewController() as! UITabBarController
+                    let homeViewController = storyboard.instantiateInitialViewController() as! HomeViewController
                     self.presentViewController(homeViewController, animated: true, completion: nil)
 
                 case .Error(let error):

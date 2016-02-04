@@ -10,13 +10,23 @@ class GitHubAPIClient {
 
     // MARK: - Properties
     let GitHubApiURL = "https://api.github.com"
+    private let realm = try! Realm()
     private let alamofireManager = Alamofire.Manager.sharedInstance
     private let sessionManager = SessionManager.sharedInstance
 
-    func request(method: Alamofire.Method = .GET, path: String) -> Observable<AnyObject> {
-        let request = self.alamofireManager.request(method, self.GitHubApiURL + path).request
+    func request(method: Alamofire.Method = .GET, path: String) -> Observable<JSON> {
+        return self.request(method, path: path, headers: nil)
+    }
+
+    func request(method: Alamofire.Method = .GET, path: String, headers: [String:String]?) -> Observable<JSON> {
+        let request: NSURLRequest?
+        if let headers = headers {
+            request = self.alamofireManager.request(method, self.GitHubApiURL + path, headers: headers).request
+        } else {
+            request = self.alamofireManager.request(method, self.GitHubApiURL + path).request
+        }
         if let request = request  {
-            return self.alamofireManager.session.rx_JSON(request)
+            return self.alamofireManager.session.rx_JSON(request).map { $0 as! JSON }
         } else {
             fatalError("Invalid request")
         }
@@ -26,7 +36,9 @@ class GitHubAPIClient {
         return request(.GET, path: "/search/repositories?q=" + searchKey)
             .map { $0["items"] as! [AnyObject] }
             .flatMap { $0.toObservable() }
-            .map { Repository(json: $0 as! JSON)! }
+            .map { (anyObject: AnyObject) -> Repository in
+                return Repository(json: anyObject as! JSON)!
+            }
             .toArray()
             .subscribeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
             .observeOn(Dependencies.sharedDependencies.mainScheduler)
@@ -42,18 +54,42 @@ class GitHubAPIClient {
             .authenticate(user: username, password: password).request
         if let request = request  {
             return self.alamofireManager.session.rx_JSON(request)
-                .doOn(onNext: { _ -> Void in
-                }, onError: { _ -> Void in
-                }, onCompleted: { () -> Void in
-                    let realm = try! Realm()
-                    self.sessionManager.saveCredentials(realm: realm, credentials: base64Credentials)
-                })
                 .map {  User(json: $0 as! JSON)! }
                 .subscribeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
                 .observeOn(Dependencies.sharedDependencies.mainScheduler)
+                .doOn { event in
+                    switch event {
+                    case .Completed:
+                        self.sessionManager.saveCredentials(realm: self.realm, credentials: base64Credentials)
+                    case .Next(_): break
+                    case .Error(_): break
+                    }
+                }
 
         } else {
             fatalError("Invalid request")
+        }
+    }
+
+    // WIP
+    func feeds() {
+        let headers = getAuthHeader()
+        self.request(.GET, path: "/feeds", headers: headers)
+            .map { FeedResponse(json: $0) }
+            .map { self.alamofireManager.request(.GET, $0!.currentUserUrl).request }
+            .flatMap { self.alamofireManager.session.rx_response($0!) }
+            .map({ (data, response) -> NSString? in
+                return NSString(data: data, encoding:NSUTF8StringEncoding)
+            })
+            .subscribeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
+            .observeOn(Dependencies.sharedDependencies.mainScheduler)
+    }
+
+    private func getAuthHeader() -> [String:String]? {
+        if let session = sessionManager.getSession(realm) {
+            return ["Authorization": "Basic \(session.credentials)"]
+        } else {
+            return nil
         }
     }
 }

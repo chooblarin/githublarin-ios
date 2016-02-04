@@ -4,7 +4,6 @@ import RealmSwift
 class SessionManager {
 
     static let sharedInstance = SessionManager()
-    var user: User?
 
     func saveCredentials(realm realm: Realm, credentials: String) {
         let session = Session()

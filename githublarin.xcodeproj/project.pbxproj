@@ -28,6 +28,7 @@
 		FAB24B2A1C62641000F51394 /* iOS in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B271C62641000F51394 /* iOS */; };
 		FAB24B2B1C62641000F51394 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B281C62641000F51394 /* Realm.framework */; };
 		FAB24B2C1C62641000F51394 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B291C62641000F51394 /* RealmSwift.framework */; };
+		FAF9F6A11C62D95200AEF3E1 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */; };
 		FAFF407E1C5DF32A00DD760A /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407B1C5DF32A00DD760A /* Gloss.framework */; };
 		FAFF407F1C5DF32A00DD760A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */; };
 		FAFF40801C5DF32A00DD760A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407D1C5DF32A00DD760A /* RxSwift.framework */; };
@@ -72,6 +73,7 @@
 		FAB24B271C62641000F51394 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Carthage/Build/iOS; sourceTree = "<group>"; };
 		FAB24B281C62641000F51394 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		FAB24B291C62641000F51394 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedResponse.swift; path = ../FeedResponse.swift; sourceTree = "<group>"; };
 		FAFF407B1C5DF32A00DD760A /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FAFF407D1C5DF32A00DD760A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				FA06CFE01C5E3D6000C6341F /* RepositoryTableViewCell.swift */,
 				FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */,
 				FA0D3BE21C5F2193002C0307 /* GistViewController.swift */,
+				FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */,
 				FAB24B221C62392D00F51394 /* Login */,
 				FA0412841C61EE4800F5CE01 /* RepositoryViewController.swift */,
 				FA0412861C61EE7F00F5CE01 /* Repository.storyboard */,
@@ -333,6 +336,7 @@
 				FA06CFE11C5E3D6000C6341F /* RepositoryTableViewCell.swift in Sources */,
 				FA0D3BDF1C5F211D002C0307 /* HomeViewController.swift in Sources */,
 				FAFF40861C5DF67500DD760A /* Repository.swift in Sources */,
+				FAF9F6A11C62D95200AEF3E1 /* FeedResponse.swift in Sources */,
 				FA0D3BE31C5F2193002C0307 /* GistViewController.swift in Sources */,
 				FAB24B241C624DFC00F51394 /* User.swift in Sources */,
 				FA54B1B91C5A120C00D37363 /* RepositoryListViewController.swift in Sources */,
