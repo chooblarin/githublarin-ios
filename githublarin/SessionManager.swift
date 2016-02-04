@@ -1,33 +1,25 @@
 import Foundation
-// import RealmSwift
+import RealmSwift
 
 class SessionManager {
 
     static let sharedInstance = SessionManager()
-    // var realm = try! Realm()
     var user: User?
 
-    func saveCredentials(username username: String, password: String) {
-//        realm.write { () -> Void in
-//            let credentials = Credentials()
-//            credentials.username = username
-//            credentials.password = password
-//        }
+    func saveCredentials(realm realm: Realm, credentials: String) {
+        let session = Session()
+        session.credentials = credentials
+
+        try! realm.write {
+            realm.add(session)
+        }
+    }
+
+    func getSession(realm: Realm) -> Session? {
+        return realm.objects(Session).first
     }
 }
 
-//class Credentials: Object {
-//    dynamic var username: String = ""
-//    dynamic var password: String = ""
-//
-//    init(username: String, password: String) {
-//        super.init()
-//        self.username = username
-//        self.password = password
-//    }
-//
-//    required init() {
-//        super.init()
-//        fatalError("init() has not been implemented")
-//    }
-//}
+class Session: Object {
+    dynamic var credentials: String = ""
+}

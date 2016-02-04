@@ -2,42 +2,21 @@ import Alamofire
 import Gloss
 import RxSwift
 import RxCocoa
+import RealmSwift
 
 class GitHubAPIClient {
 
-    let GitHubApiURL = "https://api.github.com"
-    private let manager = Alamofire.Manager.sharedInstance
-    private var credentials: String?
     static let sharedInstance = GitHubAPIClient()
 
+    // MARK: - Properties
+    let GitHubApiURL = "https://api.github.com"
+    private let alamofireManager = Alamofire.Manager.sharedInstance
+    private let sessionManager = SessionManager.sharedInstance
+
     func request(method: Alamofire.Method = .GET, path: String) -> Observable<AnyObject> {
-        let request = self.manager.request(method, self.GitHubApiURL + path).request
+        let request = self.alamofireManager.request(method, self.GitHubApiURL + path).request
         if let request = request  {
-            return self.manager.session.rx_JSON(request)
-        } else {
-            fatalError("Invalid request")
-        }
-    }
-
-    func login(username username: String, password: String) -> Observable<User> {
-        // TODO: - OAuth instead
-        let credentialData = "\(username):\(password)".dataUsingEncoding(NSUTF8StringEncoding)!
-        let base64Credentials = credentialData.base64EncodedStringWithOptions([])
-        let headers = ["Authorization": "Basic \(base64Credentials)"]
-
-        let request = self.manager.request(.GET, self.GitHubApiURL + "/user", headers: headers)
-            .authenticate(user: username, password: password).request
-        if let request = request  {
-            return self.manager.session.rx_JSON(request)
-                .doOn(onNext: { _ -> Void in
-                }, onError: { _ -> Void in
-                }, onCompleted: { () -> Void in
-                    self.credentials = base64Credentials
-                })
-                .map {  User(json: $0 as! JSON)! }
-                .subscribeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
-                .observeOn(Dependencies.sharedDependencies.mainScheduler)
-
+            return self.alamofireManager.session.rx_JSON(request)
         } else {
             fatalError("Invalid request")
         }
@@ -51,5 +30,30 @@ class GitHubAPIClient {
             .toArray()
             .subscribeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
             .observeOn(Dependencies.sharedDependencies.mainScheduler)
+    }
+
+    func login(username username: String, password: String) -> Observable<User> {
+        // TODO: - OAuth instead
+        let credentialData = "\(username):\(password)".dataUsingEncoding(NSUTF8StringEncoding)!
+        let base64Credentials = credentialData.base64EncodedStringWithOptions([])
+        let headers = ["Authorization": "Basic \(base64Credentials)"]
+
+        let request = self.alamofireManager.request(.GET, self.GitHubApiURL + "/user", headers: headers)
+            .authenticate(user: username, password: password).request
+        if let request = request  {
+            return self.alamofireManager.session.rx_JSON(request)
+                .doOn(onNext: { _ -> Void in
+                }, onError: { _ -> Void in
+                }, onCompleted: { () -> Void in
+                    let realm = try! Realm()
+                    self.sessionManager.saveCredentials(realm: realm, credentials: base64Credentials)
+                })
+                .map {  User(json: $0 as! JSON)! }
+                .subscribeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
+                .observeOn(Dependencies.sharedDependencies.mainScheduler)
+
+        } else {
+            fatalError("Invalid request")
+        }
     }
 }

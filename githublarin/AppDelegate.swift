@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -7,6 +8,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let sessionManager = SessionManager.sharedInstance
+        let realm = try! Realm()
+        if let _ = sessionManager.getSession(realm) {
+            let storyboard = UIStoryboard(name: "Home", bundle: NSBundle.mainBundle())
+            self.window?.rootViewController = storyboard.instantiateInitialViewController() as! HomeViewController
+
+        } else {
+            let storyboard = UIStoryboard(name: "Login", bundle: NSBundle.mainBundle())
+            self.window?.rootViewController = storyboard.instantiateInitialViewController() as! LoginViewController
+        }
+        self.window?.makeKeyAndVisible()
         return true
     }
 
