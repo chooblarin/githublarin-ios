@@ -1,6 +1,6 @@
 import UIKit
 
-class GistViewController: UIViewController {
+class GistListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

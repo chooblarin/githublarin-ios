@@ -12,7 +12,7 @@
 		FA06CFE11C5E3D6000C6341F /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06CFE01C5E3D6000C6341F /* RepositoryTableViewCell.swift */; };
 		FA0D3BDF1C5F211D002C0307 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3BDE1C5F211D002C0307 /* HomeViewController.swift */; };
 		FA0D3BE11C5F2168002C0307 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */; };
-		FA0D3BE31C5F2193002C0307 /* GistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3BE21C5F2193002C0307 /* GistViewController.swift */; };
+		FA0D3BE31C5F2193002C0307 /* GistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3BE21C5F2193002C0307 /* GistListViewController.swift */; };
 		FA0D3BE51C5F21D0002C0307 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0D3BE41C5F21D0002C0307 /* Home.storyboard */; };
 		FA54B1B71C5A120C00D37363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54B1B61C5A120C00D37363 /* AppDelegate.swift */; };
 		FA54B1B91C5A120C00D37363 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54B1B81C5A120C00D37363 /* RepositoryListViewController.swift */; };
@@ -28,6 +28,8 @@
 		FAB24B2A1C62641000F51394 /* iOS in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B271C62641000F51394 /* iOS */; };
 		FAB24B2B1C62641000F51394 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B281C62641000F51394 /* Realm.framework */; };
 		FAB24B2C1C62641000F51394 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B291C62641000F51394 /* RealmSwift.framework */; };
+		FAEE26461C6303AB0070A219 /* FeedList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAEE26451C6303AB0070A219 /* FeedList.storyboard */; };
+		FAEE264A1C63050A0070A219 /* GistList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAEE26491C63050A0070A219 /* GistList.storyboard */; };
 		FAF9F6A11C62D95200AEF3E1 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */; };
 		FAFF407E1C5DF32A00DD760A /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407B1C5DF32A00DD760A /* Gloss.framework */; };
 		FAFF407F1C5DF32A00DD760A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */; };
@@ -53,7 +55,7 @@
 		FA06CFE01C5E3D6000C6341F /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		FA0D3BDE1C5F211D002C0307 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		FA0D3BE21C5F2193002C0307 /* GistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistViewController.swift; sourceTree = "<group>"; };
+		FA0D3BE21C5F2193002C0307 /* GistListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistListViewController.swift; sourceTree = "<group>"; };
 		FA0D3BE41C5F21D0002C0307 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		FA54B1B31C5A120C00D37363 /* githublarin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githublarin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA54B1B61C5A120C00D37363 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 		FAB24B271C62641000F51394 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Carthage/Build/iOS; sourceTree = "<group>"; };
 		FAB24B281C62641000F51394 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		FAB24B291C62641000F51394 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		FAEE26451C6303AB0070A219 /* FeedList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FeedList.storyboard; path = ../FeedList.storyboard; sourceTree = "<group>"; };
+		FAEE26491C63050A0070A219 /* GistList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GistList.storyboard; path = ../GistList.storyboard; sourceTree = "<group>"; };
 		FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedResponse.swift; path = ../FeedResponse.swift; sourceTree = "<group>"; };
 		FAFF407B1C5DF32A00DD760A /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -139,22 +143,16 @@
 		FA54B1B51C5A120C00D37363 /* githublarin */ = {
 			isa = PBXGroup;
 			children = (
-				FA0D3BDD1C5F20D3002C0307 /* Home */,
-				FAFF40891C5E06DB00DD760A /* API */,
 				FA54B1B61C5A120C00D37363 /* AppDelegate.swift */,
-				FA54B1B81C5A120C00D37363 /* RepositoryListViewController.swift */,
-				FAFF40851C5DF67500DD760A /* Repository.swift */,
-				FA54B1BA1C5A120C00D37363 /* RepositoryList.storyboard */,
+				FAFF40891C5E06DB00DD760A /* API */,
+				FAEE26481C6304480070A219 /* Feed */,
+				FAEE264B1C6305260070A219 /* Gist */,
+				FA0D3BDD1C5F20D3002C0307 /* Home */,
+				FAB24B221C62392D00F51394 /* Login */,
+				FAEE26471C63042C0070A219 /* Repository */,
 				FA54B1BD1C5A120C00D37363 /* Assets.xcassets */,
 				FA54B1BF1C5A120C00D37363 /* LaunchScreen.storyboard */,
 				FA54B1C21C5A120C00D37363 /* Info.plist */,
-				FA06CFE01C5E3D6000C6341F /* RepositoryTableViewCell.swift */,
-				FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */,
-				FA0D3BE21C5F2193002C0307 /* GistViewController.swift */,
-				FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */,
-				FAB24B221C62392D00F51394 /* Login */,
-				FA0412841C61EE4800F5CE01 /* RepositoryViewController.swift */,
-				FA0412861C61EE7F00F5CE01 /* Repository.storyboard */,
 			);
 			path = githublarin;
 			sourceTree = "<group>";
@@ -190,6 +188,38 @@
 				FA54B1D61C5A14ED00D37363 /* Alamofire.framework */,
 			);
 			name = Carthage;
+			sourceTree = "<group>";
+		};
+		FAEE26471C63042C0070A219 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FA54B1B81C5A120C00D37363 /* RepositoryListViewController.swift */,
+				FAFF40851C5DF67500DD760A /* Repository.swift */,
+				FA54B1BA1C5A120C00D37363 /* RepositoryList.storyboard */,
+				FA06CFE01C5E3D6000C6341F /* RepositoryTableViewCell.swift */,
+				FA0412841C61EE4800F5CE01 /* RepositoryViewController.swift */,
+				FA0412861C61EE7F00F5CE01 /* Repository.storyboard */,
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
+		FAEE26481C6304480070A219 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE26451C6303AB0070A219 /* FeedList.storyboard */,
+				FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */,
+				FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		FAEE264B1C6305260070A219 /* Gist */ = {
+			isa = PBXGroup;
+			children = (
+				FA0D3BE21C5F2193002C0307 /* GistListViewController.swift */,
+				FAEE26491C63050A0070A219 /* GistList.storyboard */,
+			);
+			name = Gist;
 			sourceTree = "<group>";
 		};
 		FAFF40891C5E06DB00DD760A /* API */ = {
@@ -284,9 +314,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA54B1C11C5A120C00D37363 /* LaunchScreen.storyboard in Resources */,
+				FAEE26461C6303AB0070A219 /* FeedList.storyboard in Resources */,
 				FA0412871C61EE7F00F5CE01 /* Repository.storyboard in Resources */,
 				FAB24B1F1C62376F00F51394 /* Login.storyboard in Resources */,
 				FA54B1BE1C5A120C00D37363 /* Assets.xcassets in Resources */,
+				FAEE264A1C63050A0070A219 /* GistList.storyboard in Resources */,
 				FA54B1BC1C5A120C00D37363 /* RepositoryList.storyboard in Resources */,
 				FA0D3BE51C5F21D0002C0307 /* Home.storyboard in Resources */,
 			);
@@ -337,7 +369,7 @@
 				FA0D3BDF1C5F211D002C0307 /* HomeViewController.swift in Sources */,
 				FAFF40861C5DF67500DD760A /* Repository.swift in Sources */,
 				FAF9F6A11C62D95200AEF3E1 /* FeedResponse.swift in Sources */,
-				FA0D3BE31C5F2193002C0307 /* GistViewController.swift in Sources */,
+				FA0D3BE31C5F2193002C0307 /* GistListViewController.swift in Sources */,
 				FAB24B241C624DFC00F51394 /* User.swift in Sources */,
 				FA54B1B91C5A120C00D37363 /* RepositoryListViewController.swift in Sources */,
 				FA54B1B71C5A120C00D37363 /* AppDelegate.swift in Sources */,
