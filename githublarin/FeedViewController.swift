@@ -23,6 +23,8 @@ class FeedViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.dataSource = self
 
         apiClient.feeds()

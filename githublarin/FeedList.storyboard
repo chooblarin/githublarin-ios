@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Feed-->
@@ -17,28 +18,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="48l-aZ-SW6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="48l-aZ-SW6">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="67" id="CWM-Zl-dUo" customClass="FeedCell" customModule="githublarin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="67"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="58" id="CWM-Zl-dUo" customClass="FeedCell" customModule="githublarin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CWM-Zl-dUo" id="NdX-xR-r0B">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="66.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="57.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="JakeWharton forked JetBrains/kotlin to JakeWharton/kotlin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DA-1R-CZy">
-                                                    <rect key="frame" x="15" y="24" width="379" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="N2E-V2-c6i">
+                                                    <rect key="frame" x="8" y="12" width="584" height="32"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iby-FH-1eY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="iby-FH-1eY" secondAttribute="height" multiplier="1:1" id="KNA-ck-Kqa"/>
+                                                                <constraint firstAttribute="height" constant="32" id="Y2i-aX-v1B"/>
+                                                                <constraint firstAttribute="width" constant="32" id="oRC-6k-4IA"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JakeWharton forked JetBrains/kotlin to JakeWharton/kotlin aaaaaaaaaa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DA-1R-CZy">
+                                                            <rect key="frame" x="40" y="0.0" width="343" height="32"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" text="publishedAt" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuu-mv-UGG">
+                                                            <rect key="frame" x="391" y="0.0" width="193" height="32"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="9DA-1R-CZy" secondAttribute="bottom" constant="24" id="WDV-YV-9gs"/>
-                                                <constraint firstItem="9DA-1R-CZy" firstAttribute="leading" secondItem="NdX-xR-r0B" secondAttribute="leading" constant="15" id="YVD-8L-Eao"/>
-                                                <constraint firstItem="9DA-1R-CZy" firstAttribute="top" secondItem="NdX-xR-r0B" secondAttribute="top" constant="24" id="tsl-74-1Vi"/>
+                                                <constraint firstItem="N2E-V2-c6i" firstAttribute="top" secondItem="NdX-xR-r0B" secondAttribute="top" constant="12" id="0zR-wR-RvI"/>
+                                                <constraint firstItem="N2E-V2-c6i" firstAttribute="leading" secondItem="NdX-xR-r0B" secondAttribute="leading" constant="8" id="Uka-sH-m4N"/>
+                                                <constraint firstAttribute="trailing" secondItem="N2E-V2-c6i" secondAttribute="trailing" constant="8" id="ck8-xb-JyF"/>
+                                                <constraint firstAttribute="bottom" secondItem="N2E-V2-c6i" secondAttribute="bottom" constant="12" id="yEg-Zc-VyU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
