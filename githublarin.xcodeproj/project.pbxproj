@@ -24,6 +24,9 @@
 		FAA79A661C649F080060E30C /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A651C649F080060E30C /* FeedParser.swift */; };
 		FAA79A681C64AC460060E30C /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A671C64AC460060E30C /* Feed.swift */; };
 		FAA79A6A1C64D7270060E30C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A691C64D7270060E30C /* FeedCell.swift */; };
+		FAA79A6E1C64E9AA0060E30C /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A6D1C64E9AA0060E30C /* FeedResponse.swift */; };
+		FAA79A701C64E9BB0060E30C /* FeedList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA79A6F1C64E9BB0060E30C /* FeedList.storyboard */; };
+		FAA79A721C64E9CC0060E30C /* GistList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA79A711C64E9CC0060E30C /* GistList.storyboard */; };
 		FAB24B1F1C62376F00F51394 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB24B1E1C62376F00F51394 /* Login.storyboard */; };
 		FAB24B211C62390E00F51394 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B201C62390E00F51394 /* LoginViewController.swift */; };
 		FAB24B241C624DFC00F51394 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B231C624DFB00F51394 /* User.swift */; };
@@ -31,9 +34,6 @@
 		FAB24B2A1C62641000F51394 /* iOS in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B271C62641000F51394 /* iOS */; };
 		FAB24B2B1C62641000F51394 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B281C62641000F51394 /* Realm.framework */; };
 		FAB24B2C1C62641000F51394 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B291C62641000F51394 /* RealmSwift.framework */; };
-		FAEE26461C6303AB0070A219 /* FeedList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAEE26451C6303AB0070A219 /* FeedList.storyboard */; };
-		FAEE264A1C63050A0070A219 /* GistList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAEE26491C63050A0070A219 /* GistList.storyboard */; };
-		FAF9F6A11C62D95200AEF3E1 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */; };
 		FAFF407E1C5DF32A00DD760A /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407B1C5DF32A00DD760A /* Gloss.framework */; };
 		FAFF407F1C5DF32A00DD760A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */; };
 		FAFF40801C5DF32A00DD760A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407D1C5DF32A00DD760A /* RxSwift.framework */; };
@@ -74,6 +74,9 @@
 		FAA79A651C649F080060E30C /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
 		FAA79A671C64AC460060E30C /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		FAA79A691C64D7270060E30C /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		FAA79A6D1C64E9AA0060E30C /* FeedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
+		FAA79A6F1C64E9BB0060E30C /* FeedList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FeedList.storyboard; sourceTree = "<group>"; };
+		FAA79A711C64E9CC0060E30C /* GistList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GistList.storyboard; sourceTree = "<group>"; };
 		FAB24B1E1C62376F00F51394 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		FAB24B201C62390E00F51394 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAB24B231C624DFB00F51394 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -81,9 +84,6 @@
 		FAB24B271C62641000F51394 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Carthage/Build/iOS; sourceTree = "<group>"; };
 		FAB24B281C62641000F51394 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		FAB24B291C62641000F51394 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		FAEE26451C6303AB0070A219 /* FeedList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FeedList.storyboard; path = ../FeedList.storyboard; sourceTree = "<group>"; };
-		FAEE26491C63050A0070A219 /* GistList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GistList.storyboard; path = ../GistList.storyboard; sourceTree = "<group>"; };
-		FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedResponse.swift; path = ../FeedResponse.swift; sourceTree = "<group>"; };
 		FAFF407B1C5DF32A00DD760A /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FAFF407D1C5DF32A00DD760A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -212,9 +212,9 @@
 		FAEE26481C6304480070A219 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				FAEE26451C6303AB0070A219 /* FeedList.storyboard */,
+				FAA79A6F1C64E9BB0060E30C /* FeedList.storyboard */,
 				FAA79A671C64AC460060E30C /* Feed.swift */,
-				FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */,
+				FAA79A6D1C64E9AA0060E30C /* FeedResponse.swift */,
 				FAA79A651C649F080060E30C /* FeedParser.swift */,
 				FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */,
 				FAA79A691C64D7270060E30C /* FeedCell.swift */,
@@ -225,8 +225,8 @@
 		FAEE264B1C6305260070A219 /* Gist */ = {
 			isa = PBXGroup;
 			children = (
+				FAA79A711C64E9CC0060E30C /* GistList.storyboard */,
 				FA0D3BE21C5F2193002C0307 /* GistListViewController.swift */,
-				FAEE26491C63050A0070A219 /* GistList.storyboard */,
 			);
 			name = Gist;
 			sourceTree = "<group>";
@@ -323,11 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA54B1C11C5A120C00D37363 /* LaunchScreen.storyboard in Resources */,
-				FAEE26461C6303AB0070A219 /* FeedList.storyboard in Resources */,
+				FAA79A701C64E9BB0060E30C /* FeedList.storyboard in Resources */,
 				FA0412871C61EE7F00F5CE01 /* Repository.storyboard in Resources */,
 				FAB24B1F1C62376F00F51394 /* Login.storyboard in Resources */,
 				FA54B1BE1C5A120C00D37363 /* Assets.xcassets in Resources */,
-				FAEE264A1C63050A0070A219 /* GistList.storyboard in Resources */,
+				FAA79A721C64E9CC0060E30C /* GistList.storyboard in Resources */,
 				FA54B1BC1C5A120C00D37363 /* RepositoryList.storyboard in Resources */,
 				FA0D3BE51C5F21D0002C0307 /* Home.storyboard in Resources */,
 			);
@@ -378,8 +378,8 @@
 				FA06CFE11C5E3D6000C6341F /* RepositoryTableViewCell.swift in Sources */,
 				FA0D3BDF1C5F211D002C0307 /* HomeViewController.swift in Sources */,
 				FAFF40861C5DF67500DD760A /* Repository.swift in Sources */,
-				FAF9F6A11C62D95200AEF3E1 /* FeedResponse.swift in Sources */,
 				FAA79A681C64AC460060E30C /* Feed.swift in Sources */,
+				FAA79A6E1C64E9AA0060E30C /* FeedResponse.swift in Sources */,
 				FAA79A661C649F080060E30C /* FeedParser.swift in Sources */,
 				FA0D3BE31C5F2193002C0307 /* GistListViewController.swift in Sources */,
 				FAB24B241C624DFC00F51394 /* User.swift in Sources */,
