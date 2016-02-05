@@ -14,24 +14,6 @@ class GitHubAPIClient {
     private let alamofireManager = Alamofire.Manager.sharedInstance
     private let sessionManager = SessionManager.sharedInstance
 
-    func request(method: Alamofire.Method = .GET, path: String) -> Observable<JSON> {
-        return self.request(method, path: path, headers: nil)
-    }
-
-    func request(method: Alamofire.Method = .GET, path: String, headers: [String:String]?) -> Observable<JSON> {
-        let request: NSURLRequest?
-        if let headers = headers {
-            request = self.alamofireManager.request(method, self.GitHubApiURL + path, headers: headers).request
-        } else {
-            request = self.alamofireManager.request(method, self.GitHubApiURL + path).request
-        }
-        if let request = request  {
-            return self.alamofireManager.session.rx_JSON(request).map { $0 as! JSON }
-        } else {
-            fatalError("Invalid request")
-        }
-    }
-
     func searchRepository(searchKey: String) -> Observable<[Repository]> {
         return request(.GET, path: "/search/repositories?q=" + searchKey)
             .map { $0["items"] as! [AnyObject] }
@@ -71,16 +53,12 @@ class GitHubAPIClient {
         }
     }
 
-    // WIP
-    func feeds() {
+    func feeds() -> Observable<Feed> {
         let headers = getAuthHeader()
-        self.request(.GET, path: "/feeds", headers: headers)
+        return request(.GET, path: "/feeds", headers: headers)
             .map { FeedResponse(json: $0) }
-            .map { self.alamofireManager.request(.GET, $0!.currentUserUrl).request }
-            .flatMap { self.alamofireManager.session.rx_response($0!) }
-            .map({ (data, response) -> NSString? in
-                return NSString(data: data, encoding:NSUTF8StringEncoding)
-            })
+            .map { NSURL(string: $0!.currentUserUrl) }
+            .flatMap { FeedParser(contentsUrl: $0!).parse() }
             .subscribeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
             .observeOn(Dependencies.sharedDependencies.mainScheduler)
     }
@@ -90,6 +68,24 @@ class GitHubAPIClient {
             return ["Authorization": "Basic \(session.credentials)"]
         } else {
             return nil
+        }
+    }
+
+    private func request(method: Alamofire.Method = .GET, path: String) -> Observable<JSON> {
+        return self.request(method, path: path, headers: nil)
+    }
+
+    private func request(method: Alamofire.Method = .GET, path: String, headers: [String:String]?) -> Observable<JSON> {
+        let request: NSURLRequest?
+        if let headers = headers {
+            request = self.alamofireManager.request(method, self.GitHubApiURL + path, headers: headers).request
+        } else {
+            request = self.alamofireManager.request(method, self.GitHubApiURL + path).request
+        }
+        if let request = request  {
+            return self.alamofireManager.session.rx_JSON(request).map { $0 as! JSON }
+        } else {
+            fatalError("Invalid request")
         }
     }
 }
