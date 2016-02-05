@@ -16,10 +16,51 @@
                     <view key="view" contentMode="scaleToFill" id="YeK-Cn-TOR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="48l-aZ-SW6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="67" id="CWM-Zl-dUo" customClass="FeedCell" customModule="githublarin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CWM-Zl-dUo" id="NdX-xR-r0B">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="66.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="JakeWharton forked JetBrains/kotlin to JakeWharton/kotlin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DA-1R-CZy">
+                                                    <rect key="frame" x="15" y="24" width="379" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="9DA-1R-CZy" secondAttribute="bottom" constant="24" id="WDV-YV-9gs"/>
+                                                <constraint firstItem="9DA-1R-CZy" firstAttribute="leading" secondItem="NdX-xR-r0B" secondAttribute="leading" constant="15" id="YVD-8L-Eao"/>
+                                                <constraint firstItem="9DA-1R-CZy" firstAttribute="top" secondItem="NdX-xR-r0B" secondAttribute="top" constant="24" id="tsl-74-1Vi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="9DA-1R-CZy" id="W4D-Br-Uy5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="48l-aZ-SW6" firstAttribute="centerY" secondItem="YeK-Cn-TOR" secondAttribute="centerY" id="0ev-wd-tgR"/>
+                            <constraint firstItem="48l-aZ-SW6" firstAttribute="centerX" secondItem="YeK-Cn-TOR" secondAttribute="centerX" id="Iq7-kf-6KS"/>
+                            <constraint firstItem="48l-aZ-SW6" firstAttribute="height" secondItem="YeK-Cn-TOR" secondAttribute="height" id="VhP-6j-LMY"/>
+                            <constraint firstItem="48l-aZ-SW6" firstAttribute="width" secondItem="YeK-Cn-TOR" secondAttribute="width" id="cQm-qJ-y4U"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="cH2-vK-Flt"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="48l-aZ-SW6" id="VwK-kA-uyz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCo-ZW-6vJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

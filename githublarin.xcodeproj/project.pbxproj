@@ -23,6 +23,7 @@
 		FA54B1D71C5A14ED00D37363 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA54B1D61C5A14ED00D37363 /* Alamofire.framework */; };
 		FAA79A661C649F080060E30C /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A651C649F080060E30C /* FeedParser.swift */; };
 		FAA79A681C64AC460060E30C /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A671C64AC460060E30C /* Feed.swift */; };
+		FAA79A6A1C64D7270060E30C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A691C64D7270060E30C /* FeedCell.swift */; };
 		FAB24B1F1C62376F00F51394 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB24B1E1C62376F00F51394 /* Login.storyboard */; };
 		FAB24B211C62390E00F51394 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B201C62390E00F51394 /* LoginViewController.swift */; };
 		FAB24B241C624DFC00F51394 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B231C624DFB00F51394 /* User.swift */; };
@@ -72,6 +73,7 @@
 		FA54B1D61C5A14ED00D37363 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		FAA79A651C649F080060E30C /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
 		FAA79A671C64AC460060E30C /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		FAA79A691C64D7270060E30C /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		FAB24B1E1C62376F00F51394 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		FAB24B201C62390E00F51394 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAB24B231C624DFB00F51394 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -210,11 +212,12 @@
 		FAEE26481C6304480070A219 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				FAA79A651C649F080060E30C /* FeedParser.swift */,
 				FAEE26451C6303AB0070A219 /* FeedList.storyboard */,
-				FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */,
-				FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */,
 				FAA79A671C64AC460060E30C /* Feed.swift */,
+				FAF9F6A01C62D95200AEF3E1 /* FeedResponse.swift */,
+				FAA79A651C649F080060E30C /* FeedParser.swift */,
+				FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */,
+				FAA79A691C64D7270060E30C /* FeedCell.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			files = (
 				FAFF40881C5E06C200DD760A /* Dependencies.swift in Sources */,
 				FA0412851C61EE4800F5CE01 /* RepositoryViewController.swift in Sources */,
+				FAA79A6A1C64D7270060E30C /* FeedCell.swift in Sources */,
 				FA0D3BE11C5F2168002C0307 /* FeedViewController.swift in Sources */,
 				FAB24B261C62604200F51394 /* SessionManager.swift in Sources */,
 				FAFF40841C5DF47F00DD760A /* GitHubApiClient.swift in Sources */,
