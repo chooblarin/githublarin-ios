@@ -1,7 +1,7 @@
 import UIKit
 import RxSwift
 
-class FeedViewController: UIViewController, UITableViewDataSource {
+class FeedViewController: UITableViewController {
 
     // MARK: - Properties
 
@@ -14,38 +14,46 @@ class FeedViewController: UIViewController, UITableViewDataSource {
         }
     }
 
-    // MARK: - IBOutlets
-
-    @IBOutlet weak var tableView: UITableView!
-
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl?.addTarget(self, action: "loadFeeds", forControlEvents: UIControlEvents.ValueChanged)
 
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.dataSource = self
 
-        apiClient.feeds()
-            .toArray()
-            .subscribeNext { feeds in
-                self.feeds += feeds
-            }
-            .addDisposableTo(disposeBag)
+        loadFeeds()
     }
 
     // MARK: UITableViewDataSource
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feeds.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! FeedCell
         let feed = feeds[indexPath.row]
         cell.title.text = feed.title
         return cell
+    }
+
+    func loadFeeds() {
+        apiClient.feeds()
+            .toArray()
+            .subscribe { event in
+                switch event {
+                case .Next(let feeds):
+                    self.feeds = feeds
+                case .Error(_):
+                    self.refreshControl?.endRefreshing()
+                case .Completed:
+                    self.refreshControl?.endRefreshing()
+                }
+            }
+            .addDisposableTo(disposeBag)
     }
 
     func selected() {
