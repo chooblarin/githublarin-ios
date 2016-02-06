@@ -38,8 +38,7 @@ class GistListViewController: UIViewController, UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! GistCell
-        let gist = gists[indexPath.row]
-        cell.nameLabel.text = gist.id
+        cell.gist = gists[indexPath.row]
         return cell
     }
 

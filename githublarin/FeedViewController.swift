@@ -35,8 +35,7 @@ class FeedViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! FeedCell
-        let feed = feeds[indexPath.row]
-        cell.title.text = feed.title
+        cell.feed = feeds[indexPath.row]
         return cell
     }
 
