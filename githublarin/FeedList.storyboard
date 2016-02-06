@@ -75,11 +75,11 @@
             </objects>
             <point key="canvasLocation" x="-53" y="1142"/>
         </scene>
-        <!--Item-->
+        <!--Feed-->
         <scene sceneID="Cz5-SO-2Ol">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1KG-FN-p3K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="S0k-kq-y2g"/>
+                    <tabBarItem key="tabBarItem" title="Feed" id="S0k-kq-y2g"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cyn-jc-8ZI">

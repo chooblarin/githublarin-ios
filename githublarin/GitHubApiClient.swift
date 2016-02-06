@@ -15,7 +15,7 @@ class GitHubAPIClient {
     private let sessionManager = SessionManager.sharedInstance
 
     func searchRepository(searchKey: String) -> Observable<[Repository]> {
-        return request(.GET, path: "/search/repositories?q=" + searchKey)
+        return requestJSON(.GET, path: "/search/repositories?q=" + searchKey)
             .map { $0["items"] as! [AnyObject] }
             .flatMap { $0.toObservable() }
             .map { (anyObject: AnyObject) -> Repository in
@@ -55,10 +55,21 @@ class GitHubAPIClient {
 
     func feeds() -> Observable<Feed> {
         let headers = getAuthHeader()
-        return request(.GET, path: "/feeds", headers: headers)
+        return requestJSON(.GET, path: "/feeds", headers: headers)
             .map { FeedResponse(json: $0) }
             .map { NSURL(string: $0!.currentUserUrl) }
             .flatMap { FeedParser(contentsUrl: $0!).parse() }
+            .subscribeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
+            .observeOn(Dependencies.sharedDependencies.mainScheduler)
+    }
+
+    func gists() -> Observable<[Gist]> {
+        let headers = getAuthHeader()
+        return requestJSONArray(.GET, path: "/gists", headers: headers)
+            .map { jsonArray -> [Gist] in
+                guard let gists = Gist.modelsFromJSONArray(jsonArray) else { return [Gist]() }
+                return gists
+            }
             .subscribeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
             .observeOn(Dependencies.sharedDependencies.mainScheduler)
     }
@@ -71,11 +82,7 @@ class GitHubAPIClient {
         }
     }
 
-    private func request(method: Alamofire.Method = .GET, path: String) -> Observable<JSON> {
-        return self.request(method, path: path, headers: nil)
-    }
-
-    private func request(method: Alamofire.Method = .GET, path: String, headers: [String:String]?) -> Observable<JSON> {
+    private func request(method: Alamofire.Method = .GET, path: String, headers: [String:String]?) -> Observable<AnyObject> {
         let request: NSURLRequest?
         if let headers = headers {
             request = self.alamofireManager.request(method, self.GitHubApiURL + path, headers: headers).request
@@ -83,9 +90,25 @@ class GitHubAPIClient {
             request = self.alamofireManager.request(method, self.GitHubApiURL + path).request
         }
         if let request = request  {
-            return self.alamofireManager.session.rx_JSON(request).map { $0 as! JSON }
+            return self.alamofireManager.session.rx_JSON(request)
         } else {
             fatalError("Invalid request")
         }
+    }
+
+    private func requestJSON(method: Alamofire.Method = .GET, path: String) -> Observable<JSON> {
+        return self.requestJSON(method, path: path, headers: nil)
+    }
+
+    private func requestJSON(method: Alamofire.Method = .GET, path: String, headers: [String:String]?) -> Observable<JSON> {
+        return self.request(method, path: path, headers: headers).map { $0 as! JSON }
+    }
+
+    private func requestJSONArray(method: Alamofire.Method = .GET, path: String) -> Observable<[JSON]> {
+        return self.requestJSONArray(method, path: path, headers: nil)
+    }
+
+    private func requestJSONArray(method: Alamofire.Method = .GET, path: String, headers: [String:String]?) -> Observable<[JSON]> {
+        return self.request(method, path: path, headers: headers).map { $0 as! [JSON] }
     }
 }

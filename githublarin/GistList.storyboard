@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Gist-->
         <scene sceneID="TG8-3L-rCi">
             <objects>
-                <viewController id="lFM-4b-lyj" customClass="GistViewController" customModule="githublarin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lFM-4b-lyj" customClass="GistListViewController" customModule="githublarin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qVX-vO-4eg"/>
                         <viewControllerLayoutGuide type="bottom" id="tWn-pe-YTc"/>
@@ -16,20 +17,76 @@
                     <view key="view" contentMode="scaleToFill" id="oRB-L7-Gdl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ldM-3D-USu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GistCell" rowHeight="62" id="uVq-J5-3vN" customClass="GistCell" customModule="githublarin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uVq-J5-3vN" id="6dB-Gs-g1l">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="61.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2wp-Cq-aSo">
+                                                    <rect key="frame" x="12" y="12" width="168" height="36"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IFE-gr-YMG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="36" id="1GG-qd-SBV"/>
+                                                                <constraint firstAttribute="width" secondItem="IFE-gr-YMG" secondAttribute="height" multiplier="1:1" id="WYk-fC-PZH"/>
+                                                                <constraint firstAttribute="height" constant="36" id="xNx-8z-fyL"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="choolarin / test-gist.md" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3h-eI-wId">
+                                                            <rect key="frame" x="44" y="0.0" width="124" height="36"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="c3h-eI-wId" firstAttribute="centerY" secondItem="2wp-Cq-aSo" secondAttribute="centerY" id="9DQ-nc-5gV"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="2wp-Cq-aSo" secondAttribute="bottom" constant="12" id="73r-vZ-isi"/>
+                                                <constraint firstItem="2wp-Cq-aSo" firstAttribute="top" secondItem="6dB-Gs-g1l" secondAttribute="top" constant="12" id="Odu-k3-DN9"/>
+                                                <constraint firstItem="2wp-Cq-aSo" firstAttribute="leading" secondItem="6dB-Gs-g1l" secondAttribute="leading" constant="12" id="YYs-IV-vuE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="c3h-eI-wId" id="Jkw-vb-kyL"/>
+                                            <outlet property="ownerImageView" destination="IFE-gr-YMG" id="80L-0b-J1H"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ldM-3D-USu" firstAttribute="width" secondItem="oRB-L7-Gdl" secondAttribute="width" id="0hb-ip-1hV"/>
+                            <constraint firstItem="ldM-3D-USu" firstAttribute="centerY" secondItem="oRB-L7-Gdl" secondAttribute="centerY" id="C0l-kl-Eu4"/>
+                            <constraint firstItem="ldM-3D-USu" firstAttribute="centerX" secondItem="oRB-L7-Gdl" secondAttribute="centerX" id="RAe-In-3wY"/>
+                            <constraint firstItem="ldM-3D-USu" firstAttribute="height" secondItem="oRB-L7-Gdl" secondAttribute="height" id="sU5-Yx-yaA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Gist" id="JBk-Vc-BER"/>
+                    <connections>
+                        <outlet property="tableView" destination="ldM-3D-USu" id="pdj-sd-YXz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pVO-9J-abE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1157" y="317"/>
         </scene>
-        <!--Item-->
+        <!--Gist-->
         <scene sceneID="rsY-jP-7cm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jvG-X8-Ijc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZyA-td-iVX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="jjc-lc-Et8"/>
+                    <tabBarItem key="tabBarItem" title="Gist" id="jjc-lc-Et8"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ooz-ej-IAR">
@@ -41,6 +98,7 @@
                         <segue destination="lFM-4b-lyj" kind="relationship" relationship="rootViewController" id="UxC-8b-lhn"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jvG-X8-Ijc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="345" y="317"/>
         </scene>
