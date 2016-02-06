@@ -7,9 +7,6 @@ class RepositoryListViewController: UIViewController, UITableViewDataSource, UIT
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
 
-    // MARK: - Properties
-    var repositoryViewController: RepositoryViewController!
-
     var repositories = [Repository]() {
         didSet { self.tableView.reloadData() }
     }
@@ -17,12 +14,6 @@ class RepositoryListViewController: UIViewController, UITableViewDataSource, UIT
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let storyboard: UIStoryboard = UIStoryboard(name: "Repository", bundle: NSBundle.mainBundle())
-        if let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController {
-            repositoryViewController = navigationController.viewControllers.first as! RepositoryViewController
-        }
-
         tableView.dataSource = self
         tableView.delegate = self
         loadRepository()
@@ -44,14 +35,6 @@ class RepositoryListViewController: UIViewController, UITableViewDataSource, UIT
         let repository = repositories[indexPath.row]
         cell.viewModel = repository
         return cell
-    }
-
-    // MARK: - UITableViewDelegate
-
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let repository = repositories[indexPath.row]
-        repositoryViewController?.repository = repository
-        self.navigationController?.pushViewController(repositoryViewController!, animated: true)
     }
 
     func loadRepository() {

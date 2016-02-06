@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FA03052F1C650540002D45A0 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03052E1C650540002D45A0 /* Gist.swift */; };
-		FA0412851C61EE4800F5CE01 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0412841C61EE4800F5CE01 /* RepositoryViewController.swift */; };
-		FA0412871C61EE7F00F5CE01 /* Repository.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0412861C61EE7F00F5CE01 /* Repository.storyboard */; };
+		FA0412851C61EE4800F5CE01 /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0412841C61EE4800F5CE01 /* DetailWebViewController.swift */; };
+		FA0412871C61EE7F00F5CE01 /* DetailWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0412861C61EE7F00F5CE01 /* DetailWebView.storyboard */; };
 		FA06CFE11C5E3D6000C6341F /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06CFE01C5E3D6000C6341F /* RepositoryTableViewCell.swift */; };
 		FA0D3BDF1C5F211D002C0307 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3BDE1C5F211D002C0307 /* HomeViewController.swift */; };
 		FA0D3BE11C5F2168002C0307 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */; };
@@ -57,8 +57,8 @@
 
 /* Begin PBXFileReference section */
 		FA03052E1C650540002D45A0 /* Gist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
-		FA0412841C61EE4800F5CE01 /* RepositoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
-		FA0412861C61EE7F00F5CE01 /* Repository.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Repository.storyboard; sourceTree = "<group>"; };
+		FA0412841C61EE4800F5CE01 /* DetailWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
+		FA0412861C61EE7F00F5CE01 /* DetailWebView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailWebView.storyboard; sourceTree = "<group>"; };
 		FA06CFE01C5E3D6000C6341F /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		FA0D3BDE1C5F211D002C0307 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				FA54B1B61C5A120C00D37363 /* AppDelegate.swift */,
+				FA0412861C61EE7F00F5CE01 /* DetailWebView.storyboard */,
+				FA0412841C61EE4800F5CE01 /* DetailWebViewController.swift */,
 				FAFF40891C5E06DB00DD760A /* API */,
 				FAEE26481C6304480070A219 /* Feed */,
 				FAEE264B1C6305260070A219 /* Gist */,
@@ -211,8 +213,6 @@
 				FAFF40851C5DF67500DD760A /* Repository.swift */,
 				FA54B1BA1C5A120C00D37363 /* RepositoryList.storyboard */,
 				FA06CFE01C5E3D6000C6341F /* RepositoryTableViewCell.swift */,
-				FA0412841C61EE4800F5CE01 /* RepositoryViewController.swift */,
-				FA0412861C61EE7F00F5CE01 /* Repository.storyboard */,
 			);
 			name = Repository;
 			sourceTree = "<group>";
@@ -334,7 +334,7 @@
 			files = (
 				FA54B1C11C5A120C00D37363 /* LaunchScreen.storyboard in Resources */,
 				FAA79A701C64E9BB0060E30C /* FeedList.storyboard in Resources */,
-				FA0412871C61EE7F00F5CE01 /* Repository.storyboard in Resources */,
+				FA0412871C61EE7F00F5CE01 /* DetailWebView.storyboard in Resources */,
 				FAB24B1F1C62376F00F51394 /* Login.storyboard in Resources */,
 				FA54B1BE1C5A120C00D37363 /* Assets.xcassets in Resources */,
 				FAA79A721C64E9CC0060E30C /* GistList.storyboard in Resources */,
@@ -382,7 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAFF40881C5E06C200DD760A /* Dependencies.swift in Sources */,
-				FA0412851C61EE4800F5CE01 /* RepositoryViewController.swift in Sources */,
+				FA0412851C61EE4800F5CE01 /* DetailWebViewController.swift in Sources */,
 				FA03052F1C650540002D45A0 /* Gist.swift in Sources */,
 				FAA79A6A1C64D7270060E30C /* FeedCell.swift in Sources */,
 				FA0D3BE11C5F2168002C0307 /* FeedViewController.swift in Sources */,

@@ -27,6 +27,15 @@ class FeedViewController: UITableViewController {
         loadFeeds()
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if "ShowFeedDetail" == segue.identifier {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let detailWebViewController = navigationController.viewControllers.first as! DetailWebViewController
+            let feedCell = sender as! FeedCell
+            detailWebViewController.feed = feedCell.feed
+        }
+    }
+
     // MARK: UITableViewDataSource
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

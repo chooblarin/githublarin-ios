@@ -54,19 +54,19 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_star_white_18pt" translatesAutoresizingMaskIntoConstraints="NO" id="0lW-iO-kBx">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star_white_18pt" translatesAutoresizingMaskIntoConstraints="NO" id="0lW-iO-kBx">
                                                             <rect key="frame" x="27" y="0.0" width="16" height="18"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="277" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZy-mg-ZDk">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="277" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZy-mg-ZDk">
                                                             <rect key="frame" x="43" y="0.0" width="20" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_call_split_white_18pt" translatesAutoresizingMaskIntoConstraints="NO" id="bZ5-4j-uMm">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_call_split_white_18pt" translatesAutoresizingMaskIntoConstraints="NO" id="bZ5-4j-uMm">
                                                             <rect key="frame" x="63" y="0.0" width="18" height="18"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3,075" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vv-FR-zlf">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3,075" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vv-FR-zlf">
                                                             <rect key="frame" x="81" y="0.0" width="30" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,6 +98,7 @@
                                             <outlet property="languageLabel" destination="5kt-ux-RPM" id="z8p-3Z-JH5"/>
                                             <outlet property="starredCountLabel" destination="eZy-mg-ZDk" id="GYK-2Q-q41"/>
                                             <outlet property="updatedAtLabel" destination="N39-LQ-WaK" id="9w5-Kl-IyX"/>
+                                            <segue destination="gYq-0J-C1G" kind="presentation" id="Q0d-cO-iJ2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -119,6 +120,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1377" y="254"/>
+        </scene>
+        <!--DetailWebView-->
+        <scene sceneID="thc-bU-oJf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailWebView" id="gYq-0J-C1G" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c90-6Y-6qn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918.5" y="254"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="urO-yC-aYh">

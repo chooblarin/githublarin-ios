@@ -25,7 +25,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eoz-Xe-0ny">
                                             <rect key="frame" x="8" y="12" width="584" height="32"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7E9-D0-vPU">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7E9-D0-vPU">
                                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -60,6 +60,7 @@
                                     <outlet property="publishedAtLabel" destination="v4A-tD-k1H" id="rvR-cD-Bhq"/>
                                     <outlet property="titleLabel" destination="0PG-Ed-dC4" id="K2t-G4-7Pc"/>
                                     <outlet property="userImageView" destination="7E9-D0-vPU" id="Vb5-al-zAK"/>
+                                    <segue destination="0o0-Pb-k4w" kind="show" identifier="ShowFeedDetail" id="dvn-NG-MBf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -76,6 +77,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8g-7e-v6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-53" y="1142"/>
+        </scene>
+        <!--DetailWebView-->
+        <scene sceneID="VQD-7U-PW9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailWebView" id="0o0-Pb-k4w" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pe-aa-GVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562.5" y="1142"/>
         </scene>
         <!--Feed-->
         <scene sceneID="Cz5-SO-2Ol">
