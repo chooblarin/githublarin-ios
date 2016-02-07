@@ -8,6 +8,7 @@ class DetailWebViewController: UIViewController {
     // MARK: - Properties
     var repository: Repository?
     var feed: Feed?
+    var gist: Gist?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,9 @@ class DetailWebViewController: UIViewController {
         }
         if let repository = repository {
             htmlUrlString = repository.htmlUrl
+        }
+        if let gist = gist {
+            htmlUrlString = gist.htmlUrl
         }
 
         guard let htmlUrl = htmlUrlString,

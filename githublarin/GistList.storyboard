@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uVq-J5-3vN" id="6dB-Gs-g1l">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="61.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2wp-Cq-aSo">
@@ -61,6 +61,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="c3h-eI-wId" id="Jkw-vb-kyL"/>
                                             <outlet property="ownerImageView" destination="IFE-gr-YMG" id="80L-0b-J1H"/>
+                                            <segue destination="xKQ-uR-ynZ" kind="show" identifier="ShowGistDetail" id="IIV-k8-2nQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -81,6 +82,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pVO-9J-abE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1157" y="317"/>
+        </scene>
+        <!--DetailWebView-->
+        <scene sceneID="3lE-C9-jHD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailWebView" id="xKQ-uR-ynZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0uy-gC-MVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1730.5" y="317"/>
         </scene>
         <!--Gist-->
         <scene sceneID="rsY-jP-7cm">

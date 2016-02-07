@@ -24,10 +24,21 @@ class GistListViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
 
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableViewAutomaticDimension
 
         apiClient.gists().subscribeNext {
             self.gists = $0
         }.addDisposableTo(disposeBag)
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if "ShowGistDetail" == segue.identifier {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let detailWebViewController = navigationController.viewControllers.first as! DetailWebViewController
+            let gistCell = sender as! GistCell
+            detailWebViewController.gist = gistCell.gist
+        }
     }
 
     // MARK: - UITableViewDataSource

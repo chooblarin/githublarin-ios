@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qyv-pE-IA5" id="0qY-eP-cEw">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="57.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eoz-Xe-0ny">
