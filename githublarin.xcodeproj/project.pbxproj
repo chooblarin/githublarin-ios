@@ -17,6 +17,8 @@
 		FA0D3BE51C5F21D0002C0307 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0D3BE41C5F21D0002C0307 /* Home.storyboard */; };
 		FA17F9CC1C65BA8900D7741E /* GistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17F9CB1C65BA8900D7741E /* GistCell.swift */; };
 		FA17F9CE1C65BF2F00D7741E /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA17F9CD1C65BF2F00D7741E /* Kingfisher.framework */; };
+		FA210BBC1C672E160016F589 /* DetailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBB1C672E160016F589 /* DetailNavigationController.swift */; };
+		FA210BBE1C672F820016F589 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBD1C672F820016F589 /* Animator.swift */; };
 		FA54B1B71C5A120C00D37363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54B1B61C5A120C00D37363 /* AppDelegate.swift */; };
 		FA54B1B91C5A120C00D37363 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54B1B81C5A120C00D37363 /* RepositoryListViewController.swift */; };
 		FA54B1BC1C5A120C00D37363 /* RepositoryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA54B1BA1C5A120C00D37363 /* RepositoryList.storyboard */; };
@@ -66,6 +68,8 @@
 		FA0D3BE41C5F21D0002C0307 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		FA17F9CB1C65BA8900D7741E /* GistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistCell.swift; sourceTree = "<group>"; };
 		FA17F9CD1C65BF2F00D7741E /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		FA210BBB1C672E160016F589 /* DetailNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNavigationController.swift; sourceTree = "<group>"; };
+		FA210BBD1C672F820016F589 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		FA54B1B31C5A120C00D37363 /* githublarin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githublarin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA54B1B61C5A120C00D37363 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA54B1B81C5A120C00D37363 /* RepositoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 			children = (
 				FA54B1B61C5A120C00D37363 /* AppDelegate.swift */,
 				FA0412861C61EE7F00F5CE01 /* DetailWebView.storyboard */,
+				FA210BBB1C672E160016F589 /* DetailNavigationController.swift */,
+				FA210BBD1C672F820016F589 /* Animator.swift */,
 				FA0412841C61EE4800F5CE01 /* DetailWebViewController.swift */,
 				FAFF40891C5E06DB00DD760A /* API */,
 				FAEE26481C6304480070A219 /* Feed */,
@@ -381,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA210BBC1C672E160016F589 /* DetailNavigationController.swift in Sources */,
 				FAFF40881C5E06C200DD760A /* Dependencies.swift in Sources */,
 				FA0412851C61EE4800F5CE01 /* DetailWebViewController.swift in Sources */,
 				FA03052F1C650540002D45A0 /* Gist.swift in Sources */,
@@ -392,6 +399,7 @@
 				FA0D3BDF1C5F211D002C0307 /* HomeViewController.swift in Sources */,
 				FAFF40861C5DF67500DD760A /* Repository.swift in Sources */,
 				FAA79A681C64AC460060E30C /* Feed.swift in Sources */,
+				FA210BBE1C672F820016F589 /* Animator.swift in Sources */,
 				FA17F9CC1C65BA8900D7741E /* GistCell.swift in Sources */,
 				FAA79A6E1C64E9AA0060E30C /* FeedResponse.swift in Sources */,
 				FAA79A661C649F080060E30C /* FeedParser.swift in Sources */,

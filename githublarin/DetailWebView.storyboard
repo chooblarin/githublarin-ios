@@ -30,7 +30,13 @@
                             <constraint firstItem="A8b-vA-68N" firstAttribute="top" secondItem="12l-1t-FF7" secondAttribute="bottom" id="TAV-nl-0WV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TYM-wS-M2I"/>
+                    <navigationItem key="navigationItem" id="TYM-wS-M2I">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="2wK-1Y-ubs">
+                            <connections>
+                                <action selector="dismiss:" destination="qf3-1v-MQN" id="3zw-Ts-xUz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="12l-1t-FF7" id="bAw-g6-EJe"/>
                     </connections>
@@ -39,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="1297" y="280"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Detail Navigation Controller-->
         <scene sceneID="wEh-Si-eNw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="au6-GU-NmI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="au6-GU-NmI" customClass="DetailNavigationController" customModule="githublarin" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8uH-gi-Sfu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
