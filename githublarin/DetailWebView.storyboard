@@ -17,20 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12l-1t-FF7">
-                                <rect key="frame" x="0.0" y="1" width="600" height="600"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12l-1t-FF7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="12l-1t-FF7" secondAttribute="trailing" id="4lF-9h-y4R"/>
-                            <constraint firstItem="12l-1t-FF7" firstAttribute="leading" secondItem="mAf-cz-7jW" secondAttribute="leading" id="Dlp-yu-RoA"/>
-                            <constraint firstItem="12l-1t-FF7" firstAttribute="top" secondItem="mAf-cz-7jW" secondAttribute="top" id="Mtc-lr-VSQ"/>
-                            <constraint firstItem="A8b-vA-68N" firstAttribute="top" secondItem="12l-1t-FF7" secondAttribute="bottom" id="TAV-nl-0WV"/>
+                            <constraint firstItem="12l-1t-FF7" firstAttribute="centerX" secondItem="mAf-cz-7jW" secondAttribute="centerX" id="3oP-3B-QFh"/>
+                            <constraint firstItem="12l-1t-FF7" firstAttribute="height" secondItem="mAf-cz-7jW" secondAttribute="height" id="YMy-6V-7GK"/>
+                            <constraint firstItem="12l-1t-FF7" firstAttribute="centerY" secondItem="mAf-cz-7jW" secondAttribute="centerY" id="aSk-bh-baT"/>
+                            <constraint firstItem="12l-1t-FF7" firstAttribute="width" secondItem="mAf-cz-7jW" secondAttribute="width" id="wF2-eg-a5b"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TYM-wS-M2I">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="2wK-1Y-ubs">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2wK-1Y-ubs">
                             <connections>
                                 <action selector="dismiss:" destination="qf3-1v-MQN" id="3zw-Ts-xUz"/>
                             </connections>
