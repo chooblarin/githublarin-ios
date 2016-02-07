@@ -8,6 +8,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
+        // navigation bar style
+        let navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.tintColor = UIColor(hex: 0xCDDC39)
+        navigationBarAppearance.barTintColor = UIColor(hex: 0x330089)
+        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+
+        // status bar style
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let sessionManager = SessionManager.sharedInstance
         let realm = try! Realm()

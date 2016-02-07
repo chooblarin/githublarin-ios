@@ -19,10 +19,9 @@
                         <subviews>
                             <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12l-1t-FF7">
                                 <rect key="frame" x="0.0" y="1" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="12l-1t-FF7" secondAttribute="trailing" id="4lF-9h-y4R"/>
                             <constraint firstItem="12l-1t-FF7" firstAttribute="leading" secondItem="mAf-cz-7jW" secondAttribute="leading" id="Dlp-yu-RoA"/>

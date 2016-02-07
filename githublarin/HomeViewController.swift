@@ -15,6 +15,7 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate {
     }
 
     // MARK: - UITabBarControllerDelegate
+
     func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
         guard let navigationController = viewController as? UINavigationController else { return }
         switch navigationController.viewControllers.first! {
