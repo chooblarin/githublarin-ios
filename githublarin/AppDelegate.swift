@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // status bar style
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
 
+        Realm.Configuration.defaultConfiguration = realmConfig()
+
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let sessionManager = SessionManager.sharedInstance
         let realm = try! Realm()
@@ -46,6 +48,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(application: UIApplication) {
+    }
+
+    private func realmConfig() -> Realm.Configuration {
+        var config = Realm.Configuration()
+        let path = NSURL.fileURLWithPath(config.path!)
+            .URLByDeletingLastPathComponent?
+            .URLByAppendingPathComponent("githublarin")
+            .URLByAppendingPathExtension("realm")
+            .path
+        config.path = path
+        config.schemaVersion = 1
+        config.migrationBlock = { migration, oldSchemaVersion in
+            // do nothing yet
+        }
+        return config
     }
 }
 
