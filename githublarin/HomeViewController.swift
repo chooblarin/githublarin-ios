@@ -7,8 +7,10 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate {
         var viewControllers = [UIViewController]()
         let feedStoryboard = UIStoryboard(name: "FeedList", bundle: NSBundle.mainBundle())
         let gistStoryboard = UIStoryboard(name: "GistList", bundle: NSBundle.mainBundle())
+        let notificationsStoryboard = UIStoryboard(name: "Notifications", bundle: NSBundle.mainBundle())
         viewControllers.append(feedStoryboard.instantiateInitialViewController()!)
         viewControllers.append(gistStoryboard.instantiateInitialViewController()!)
+        viewControllers.append(notificationsStoryboard.instantiateInitialViewController()!)
         self.viewControllers = viewControllers
 
         self.delegate = self
