@@ -20,6 +20,8 @@
 		FA210BBC1C672E160016F589 /* DetailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBB1C672E160016F589 /* DetailNavigationController.swift */; };
 		FA210BBE1C672F820016F589 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBD1C672F820016F589 /* Animator.swift */; };
 		FA210BC01C6744F00016F589 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBF1C6744F00016F589 /* UIColor.swift */; };
+		FA3C4E8E1C68192E00919956 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C4E8D1C68192E00919956 /* MyPageViewController.swift */; };
+		FA3C4E901C68194A00919956 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3C4E8F1C68194A00919956 /* MyPage.storyboard */; };
 		FA54B1B71C5A120C00D37363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54B1B61C5A120C00D37363 /* AppDelegate.swift */; };
 		FA54B1B91C5A120C00D37363 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54B1B81C5A120C00D37363 /* RepositoryListViewController.swift */; };
 		FA54B1BC1C5A120C00D37363 /* RepositoryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA54B1BA1C5A120C00D37363 /* RepositoryList.storyboard */; };
@@ -74,6 +76,8 @@
 		FA210BBB1C672E160016F589 /* DetailNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNavigationController.swift; sourceTree = "<group>"; };
 		FA210BBD1C672F820016F589 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		FA210BBF1C6744F00016F589 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		FA3C4E8D1C68192E00919956 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		FA3C4E8F1C68194A00919956 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		FA54B1B31C5A120C00D37363 /* githublarin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githublarin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA54B1B61C5A120C00D37363 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA54B1B81C5A120C00D37363 /* RepositoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,24 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
+		FA3C4E8C1C6818E800919956 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				FA9309FD1C68175400A5B947 /* NotificationsViewController.swift */,
+				FA9309FF1C68177300A5B947 /* Notifications.storyboard */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		FA3C4E911C68199D00919956 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				FA3C4E8D1C68192E00919956 /* MyPageViewController.swift */,
+				FA3C4E8F1C68194A00919956 /* MyPage.storyboard */,
+			);
+			name = MyPage;
+			sourceTree = "<group>";
+		};
 		FA54B1AA1C5A120C00D37363 = {
 			isa = PBXGroup;
 			children = (
@@ -166,8 +188,6 @@
 		FA54B1B51C5A120C00D37363 /* githublarin */ = {
 			isa = PBXGroup;
 			children = (
-				FA9309FD1C68175400A5B947 /* NotificationsViewController.swift */,
-				FA9309FF1C68177300A5B947 /* Notifications.storyboard */,
 				FA54B1B61C5A120C00D37363 /* AppDelegate.swift */,
 				FA0412861C61EE7F00F5CE01 /* DetailWebView.storyboard */,
 				FA210BBB1C672E160016F589 /* DetailNavigationController.swift */,
@@ -178,6 +198,8 @@
 				FAEE264B1C6305260070A219 /* Gist */,
 				FA0D3BDD1C5F20D3002C0307 /* Home */,
 				FAB24B221C62392D00F51394 /* Login */,
+				FA3C4E911C68199D00919956 /* MyPage */,
+				FA3C4E8C1C6818E800919956 /* Notification */,
 				FAEE26471C63042C0070A219 /* Repository */,
 				FA54B1BD1C5A120C00D37363 /* Assets.xcassets */,
 				FA54B1BF1C5A120C00D37363 /* LaunchScreen.storyboard */,
@@ -348,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA54B1C11C5A120C00D37363 /* LaunchScreen.storyboard in Resources */,
+				FA3C4E901C68194A00919956 /* MyPage.storyboard in Resources */,
 				FAA79A701C64E9BB0060E30C /* FeedList.storyboard in Resources */,
 				FA930A001C68177300A5B947 /* Notifications.storyboard in Resources */,
 				FA0412871C61EE7F00F5CE01 /* DetailWebView.storyboard in Resources */,
@@ -404,6 +427,7 @@
 				FAA79A6A1C64D7270060E30C /* FeedCell.swift in Sources */,
 				FA0D3BE11C5F2168002C0307 /* FeedViewController.swift in Sources */,
 				FAB24B261C62604200F51394 /* SessionManager.swift in Sources */,
+				FA3C4E8E1C68192E00919956 /* MyPageViewController.swift in Sources */,
 				FA210BC01C6744F00016F589 /* UIColor.swift in Sources */,
 				FAFF40841C5DF47F00DD760A /* GitHubApiClient.swift in Sources */,
 				FA06CFE11C5E3D6000C6341F /* RepositoryTableViewCell.swift in Sources */,

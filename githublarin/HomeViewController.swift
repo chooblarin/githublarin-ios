@@ -5,12 +5,14 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         var viewControllers = [UIViewController]()
-        let feedStoryboard = UIStoryboard(name: "FeedList", bundle: NSBundle.mainBundle())
-        let gistStoryboard = UIStoryboard(name: "GistList", bundle: NSBundle.mainBundle())
+        let feedListStoryboard = UIStoryboard(name: "FeedList", bundle: NSBundle.mainBundle())
+        let gistListStoryboard = UIStoryboard(name: "GistList", bundle: NSBundle.mainBundle())
         let notificationsStoryboard = UIStoryboard(name: "Notifications", bundle: NSBundle.mainBundle())
-        viewControllers.append(feedStoryboard.instantiateInitialViewController()!)
-        viewControllers.append(gistStoryboard.instantiateInitialViewController()!)
+        let myPageStoryboard = UIStoryboard(name: "MyPage", bundle: NSBundle.mainBundle())
+        viewControllers.append(feedListStoryboard.instantiateInitialViewController()!)
+        viewControllers.append(gistListStoryboard.instantiateInitialViewController()!)
         viewControllers.append(notificationsStoryboard.instantiateInitialViewController()!)
+        viewControllers.append(myPageStoryboard.instantiateInitialViewController()!)
         self.viewControllers = viewControllers
 
         self.delegate = self
