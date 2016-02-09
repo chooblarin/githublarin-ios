@@ -20,6 +20,7 @@
 		FA210BBC1C672E160016F589 /* DetailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBB1C672E160016F589 /* DetailNavigationController.swift */; };
 		FA210BBE1C672F820016F589 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBD1C672F820016F589 /* Animator.swift */; };
 		FA210BC01C6744F00016F589 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBF1C6744F00016F589 /* UIColor.swift */; };
+		FA2F411A1C69AD3E007971B7 /* GistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F41191C69AD3E007971B7 /* GistsViewController.swift */; };
 		FA3C4E8E1C68192E00919956 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C4E8D1C68192E00919956 /* MyPageViewController.swift */; };
 		FA3C4E901C68194A00919956 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3C4E8F1C68194A00919956 /* MyPage.storyboard */; };
 		FA54B1B71C5A120C00D37363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54B1B61C5A120C00D37363 /* AppDelegate.swift */; };
@@ -76,6 +77,7 @@
 		FA210BBB1C672E160016F589 /* DetailNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNavigationController.swift; sourceTree = "<group>"; };
 		FA210BBD1C672F820016F589 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		FA210BBF1C6744F00016F589 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		FA2F41191C69AD3E007971B7 /* GistsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistsViewController.swift; sourceTree = "<group>"; };
 		FA3C4E8D1C68192E00919956 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		FA3C4E8F1C68194A00919956 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		FA54B1B31C5A120C00D37363 /* githublarin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githublarin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +276,7 @@
 				FA17F9CB1C65BA8900D7741E /* GistCell.swift */,
 				FA0D3BE21C5F2193002C0307 /* GistListViewController.swift */,
 				FA03052E1C650540002D45A0 /* Gist.swift */,
+				FA2F41191C69AD3E007971B7 /* GistsViewController.swift */,
 			);
 			name = Gist;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				FA17F9CC1C65BA8900D7741E /* GistCell.swift in Sources */,
 				FAA79A6E1C64E9AA0060E30C /* FeedResponse.swift in Sources */,
 				FAA79A661C649F080060E30C /* FeedParser.swift in Sources */,
+				FA2F411A1C69AD3E007971B7 /* GistsViewController.swift in Sources */,
 				FA9309FE1C68175400A5B947 /* NotificationsViewController.swift in Sources */,
 				FA0D3BE31C5F2193002C0307 /* GistListViewController.swift in Sources */,
 				FAB24B241C624DFC00F51394 /* User.swift in Sources */,
