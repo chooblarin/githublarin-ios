@@ -67,8 +67,7 @@ class GitHubAPIClient {
         let headers = getAuthHeader()
         return requestJSONArray(.GET, path: "/gists", headers: headers)
             .map { jsonArray -> [Gist] in
-                guard let gists = Gist.modelsFromJSONArray(jsonArray) else { return [Gist]() }
-                return gists
+                return [Gist].fromJSONArray(jsonArray)
             }
             .subscribeOn(Dependencies.sharedDependencies.backgroundWorkScheduler)
             .observeOn(Dependencies.sharedDependencies.mainScheduler)
