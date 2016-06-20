@@ -23,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sessionManager = SessionManager.sharedInstance
         let realm = try! Realm()
         if let _ = sessionManager.getSession(realm) {
-            let storyboard = UIStoryboard(name: "Home", bundle: NSBundle.mainBundle())
-            self.window?.rootViewController = storyboard.instantiateInitialViewController() as! HomeViewController
+            self.window?.rootViewController = HomeViewController()
 
         } else {
             self.window?.rootViewController = LoginViewController()
@@ -64,6 +63,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-func commonError(error: String, location: String = "\(__FILE__):\(__LINE__)") -> NSError {
-    return NSError(domain: "CommonError", code: -1, userInfo: [NSLocalizedDescriptionKey: "\(location): \(error)"])
-}

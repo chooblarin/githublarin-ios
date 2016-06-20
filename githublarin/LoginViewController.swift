@@ -110,8 +110,7 @@ class LoginViewController: UIViewController {
             .subscribe { event -> Void in
                 switch event {
                 case .Next(_):
-                    let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: NSBundle.mainBundle())
-                    let homeViewController = storyboard.instantiateInitialViewController() as! HomeViewController
+                    let homeViewController =  HomeViewController()
                     self.presentViewController(homeViewController, animated: true, completion: nil)
 
                 case .Error(let error):

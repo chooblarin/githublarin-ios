@@ -1,6 +1,9 @@
 import UIKit
 import Kingfisher
 
+extension FeedCell: ReusableView {}
+extension FeedCell: NibLoadableView {}
+
 class FeedCell: UITableViewCell {
 
     // MARK: - IBOutlets

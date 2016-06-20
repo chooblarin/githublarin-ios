@@ -14,7 +14,6 @@
 		FA0D3BDF1C5F211D002C0307 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3BDE1C5F211D002C0307 /* HomeViewController.swift */; };
 		FA0D3BE11C5F2168002C0307 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */; };
 		FA0D3BE31C5F2193002C0307 /* GistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3BE21C5F2193002C0307 /* GistListViewController.swift */; };
-		FA0D3BE51C5F21D0002C0307 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0D3BE41C5F21D0002C0307 /* Home.storyboard */; };
 		FA17F9CC1C65BA8900D7741E /* GistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17F9CB1C65BA8900D7741E /* GistCell.swift */; };
 		FA17F9CE1C65BF2F00D7741E /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA17F9CD1C65BF2F00D7741E /* Kingfisher.framework */; };
 		FA210BBC1C672E160016F589 /* DetailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBB1C672E160016F589 /* DetailNavigationController.swift */; };
@@ -33,11 +32,12 @@
 		FA9309FE1C68175400A5B947 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9309FD1C68175400A5B947 /* NotificationsViewController.swift */; };
 		FA930A001C68177300A5B947 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9309FF1C68177300A5B947 /* Notifications.storyboard */; };
 		FA90FDC21D18445100ACA9B1 /* Shakable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDC11D18445100ACA9B1 /* Shakable.swift */; };
+		FA90FDC41D1854F700ACA9B1 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA90FDC31D1854F700ACA9B1 /* FeedCell.xib */; };
+		FA90FDC61D18552D00ACA9B1 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDC51D18552D00ACA9B1 /* UITableView+Extension.swift */; };
 		FAA79A661C649F080060E30C /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A651C649F080060E30C /* FeedParser.swift */; };
 		FAA79A681C64AC460060E30C /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A671C64AC460060E30C /* Feed.swift */; };
 		FAA79A6A1C64D7270060E30C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A691C64D7270060E30C /* FeedCell.swift */; };
 		FAA79A6E1C64E9AA0060E30C /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A6D1C64E9AA0060E30C /* FeedResponse.swift */; };
-		FAA79A701C64E9BB0060E30C /* FeedList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA79A6F1C64E9BB0060E30C /* FeedList.storyboard */; };
 		FAA79A721C64E9CC0060E30C /* GistList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA79A711C64E9CC0060E30C /* GistList.storyboard */; };
 		FAB24B211C62390E00F51394 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B201C62390E00F51394 /* LoginViewController.swift */; };
 		FAB24B241C624DFC00F51394 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B231C624DFB00F51394 /* User.swift */; };
@@ -71,7 +71,6 @@
 		FA0D3BDE1C5F211D002C0307 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		FA0D3BE21C5F2193002C0307 /* GistListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistListViewController.swift; sourceTree = "<group>"; };
-		FA0D3BE41C5F21D0002C0307 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		FA17F9CB1C65BA8900D7741E /* GistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistCell.swift; sourceTree = "<group>"; };
 		FA17F9CD1C65BF2F00D7741E /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		FA210BBB1C672E160016F589 /* DetailNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNavigationController.swift; sourceTree = "<group>"; };
@@ -94,11 +93,12 @@
 		FA9309FD1C68175400A5B947 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		FA9309FF1C68177300A5B947 /* Notifications.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
 		FA90FDC11D18445100ACA9B1 /* Shakable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shakable.swift; sourceTree = "<group>"; };
+		FA90FDC31D1854F700ACA9B1 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		FA90FDC51D18552D00ACA9B1 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		FAA79A651C649F080060E30C /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
 		FAA79A671C64AC460060E30C /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		FAA79A691C64D7270060E30C /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		FAA79A6D1C64E9AA0060E30C /* FeedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
-		FAA79A6F1C64E9BB0060E30C /* FeedList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FeedList.storyboard; sourceTree = "<group>"; };
 		FAA79A711C64E9CC0060E30C /* GistList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GistList.storyboard; sourceTree = "<group>"; };
 		FAB24B201C62390E00F51394 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAB24B231C624DFB00F51394 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -144,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				FA0D3BDE1C5F211D002C0307 /* HomeViewController.swift */,
-				FA0D3BE41C5F21D0002C0307 /* Home.storyboard */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -208,6 +207,7 @@
 				FA54B1C21C5A120C00D37363 /* Info.plist */,
 				FA210BBF1C6744F00016F589 /* UIColor.swift */,
 				FA90FDC11D18445100ACA9B1 /* Shakable.swift */,
+				FA90FDC51D18552D00ACA9B1 /* UITableView+Extension.swift */,
 			);
 			path = githublarin;
 			sourceTree = "<group>";
@@ -259,12 +259,12 @@
 		FAEE26481C6304480070A219 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				FAA79A6F1C64E9BB0060E30C /* FeedList.storyboard */,
 				FAA79A671C64AC460060E30C /* Feed.swift */,
 				FAA79A6D1C64E9AA0060E30C /* FeedResponse.swift */,
 				FAA79A651C649F080060E30C /* FeedParser.swift */,
 				FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */,
 				FAA79A691C64D7270060E30C /* FeedCell.swift */,
+				FA90FDC31D1854F700ACA9B1 /* FeedCell.xib */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -374,13 +374,12 @@
 			files = (
 				FA54B1C11C5A120C00D37363 /* LaunchScreen.storyboard in Resources */,
 				FA3C4E901C68194A00919956 /* MyPage.storyboard in Resources */,
-				FAA79A701C64E9BB0060E30C /* FeedList.storyboard in Resources */,
 				FA930A001C68177300A5B947 /* Notifications.storyboard in Resources */,
 				FA0412871C61EE7F00F5CE01 /* DetailWebView.storyboard in Resources */,
 				FA54B1BE1C5A120C00D37363 /* Assets.xcassets in Resources */,
 				FAA79A721C64E9CC0060E30C /* GistList.storyboard in Resources */,
+				FA90FDC41D1854F700ACA9B1 /* FeedCell.xib in Resources */,
 				FA54B1BC1C5A120C00D37363 /* RepositoryList.storyboard in Resources */,
-				FA0D3BE51C5F21D0002C0307 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +424,7 @@
 				FA210BBC1C672E160016F589 /* DetailNavigationController.swift in Sources */,
 				FAFF40881C5E06C200DD760A /* Dependencies.swift in Sources */,
 				FA0412851C61EE4800F5CE01 /* DetailWebViewController.swift in Sources */,
+				FA90FDC61D18552D00ACA9B1 /* UITableView+Extension.swift in Sources */,
 				FA03052F1C650540002D45A0 /* Gist.swift in Sources */,
 				FAA79A6A1C64D7270060E30C /* FeedCell.swift in Sources */,
 				FA0D3BE11C5F2168002C0307 /* FeedViewController.swift in Sources */,

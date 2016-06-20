@@ -3,6 +3,14 @@ import RxSwift
 
 class FeedViewController: UITableViewController {
 
+    static func create() -> UIViewController {
+        let viewController = FeedViewController(style: .Plain)
+        viewController.title = "Feed"
+        viewController.tabBarItem = UITabBarItem(title: "Feed", image: nil, selectedImage: nil)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        return navigationController
+    }
+
     // MARK: - Properties
 
     let disposeBag: DisposeBag = DisposeBag()
@@ -18,8 +26,12 @@ class FeedViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshControl?.addTarget(self, action: "loadFeeds", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(
+            self,
+            action: #selector(FeedViewController.loadFeeds),
+            forControlEvents: UIControlEvents.ValueChanged)
 
+        tableView.register(FeedCell.self)
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.dataSource = self
@@ -43,7 +55,7 @@ class FeedViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! FeedCell
+        let cell: FeedCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.feed = feeds[indexPath.row]
         return cell
     }
@@ -62,8 +74,5 @@ class FeedViewController: UITableViewController {
                 }
             }
             .addDisposableTo(disposeBag)
-    }
-
-    func selected() {
     }
 }
