@@ -6,7 +6,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         // navigation bar style
@@ -28,8 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = storyboard.instantiateInitialViewController() as! HomeViewController
 
         } else {
-            let storyboard = UIStoryboard(name: "Login", bundle: NSBundle.mainBundle())
-            self.window?.rootViewController = storyboard.instantiateInitialViewController() as! LoginViewController
+            self.window?.rootViewController = LoginViewController()
         }
         self.window?.makeKeyAndVisible()
         return true
