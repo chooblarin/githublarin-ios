@@ -49,12 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func realmConfig() -> Realm.Configuration {
         var config = Realm.Configuration()
-        let path = NSURL.fileURLWithPath(config.path!)
+        config.fileURL?
             .URLByDeletingLastPathComponent?
-            .URLByAppendingPathComponent("githublarin")
-            .URLByAppendingPathExtension("realm")
-            .path
-        config.path = path
+            .URLByAppendingPathComponent("githublarin.realm")
         config.schemaVersion = 1
         config.migrationBlock = { migration, oldSchemaVersion in
             // do nothing yet
