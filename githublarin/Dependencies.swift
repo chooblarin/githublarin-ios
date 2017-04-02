@@ -16,10 +16,10 @@ class Dependencies {
     let backgroundWorkScheduler: ImmediateSchedulerType
     let mainScheduler: SerialDispatchQueueScheduler
 
-    private init() {
-        let operationQueue = NSOperationQueue()
+    fileprivate init() {
+        let operationQueue = OperationQueue()
         operationQueue.maxConcurrentOperationCount = 2
-        operationQueue.qualityOfService = NSQualityOfService.UserInitiated
+        operationQueue.qualityOfService = QualityOfService.userInitiated
         backgroundWorkScheduler = OperationQueueScheduler(operationQueue: operationQueue)
         mainScheduler = MainScheduler.instance
     }

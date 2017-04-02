@@ -14,7 +14,7 @@ class DetailWebViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         var htmlUrlString: String?
         if let feed = feed {
             htmlUrlString = feed.link
@@ -27,8 +27,8 @@ class DetailWebViewController: UIViewController {
         }
 
         guard let htmlUrl = htmlUrlString,
-            let url = NSURL(string: htmlUrl) else { return }
-        webView.loadRequest(NSURLRequest(URL: url))
+            let url = URL(string: htmlUrl) else { return }
+        webView.loadRequest(URLRequest(url: url))
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +37,7 @@ class DetailWebViewController: UIViewController {
 
     // MARK: - IBActions
 
-    @IBAction func dismiss(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func dismiss(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

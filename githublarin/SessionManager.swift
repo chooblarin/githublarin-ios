@@ -5,7 +5,7 @@ class SessionManager {
 
     static let sharedInstance = SessionManager()
 
-    func saveCredentials(realm realm: Realm, credentials: String) {
+    func saveCredentials(realm: Realm, credentials: String) {
         let session = Session()
         session.credentials = credentials
 
@@ -14,8 +14,8 @@ class SessionManager {
         }
     }
 
-    func getSession(realm: Realm) -> Session? {
-        return realm.objects(Session).first
+    func getSession(_ realm: Realm) -> Session? {
+        return realm.objects(Session.self).first
     }
 }
 

@@ -15,7 +15,6 @@
 		FA0D3BE11C5F2168002C0307 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */; };
 		FA0D3BE31C5F2193002C0307 /* GistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3BE21C5F2193002C0307 /* GistListViewController.swift */; };
 		FA17F9CC1C65BA8900D7741E /* GistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17F9CB1C65BA8900D7741E /* GistCell.swift */; };
-		FA17F9CE1C65BF2F00D7741E /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA17F9CD1C65BF2F00D7741E /* Kingfisher.framework */; };
 		FA210BBC1C672E160016F589 /* DetailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBB1C672E160016F589 /* DetailNavigationController.swift */; };
 		FA210BBE1C672F820016F589 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBD1C672F820016F589 /* Animator.swift */; };
 		FA210BC01C6744F00016F589 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA210BBF1C6744F00016F589 /* UIColor.swift */; };
@@ -28,12 +27,17 @@
 		FA54B1BE1C5A120C00D37363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA54B1BD1C5A120C00D37363 /* Assets.xcassets */; };
 		FA54B1C11C5A120C00D37363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA54B1BF1C5A120C00D37363 /* LaunchScreen.storyboard */; };
 		FA54B1CC1C5A120C00D37363 /* githublarinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54B1CB1C5A120C00D37363 /* githublarinTests.swift */; };
-		FA54B1D71C5A14ED00D37363 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA54B1D61C5A14ED00D37363 /* Alamofire.framework */; };
-		FA9309FE1C68175400A5B947 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9309FD1C68175400A5B947 /* NotificationsViewController.swift */; };
-		FA930A001C68177300A5B947 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9309FF1C68177300A5B947 /* Notifications.storyboard */; };
+		FA6BD2F41E912D0D00C27B64 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6BD2EE1E912D0D00C27B64 /* Alamofire.framework */; };
+		FA6BD2F51E912D0D00C27B64 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6BD2EF1E912D0D00C27B64 /* Gloss.framework */; };
+		FA6BD2F61E912D0D00C27B64 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6BD2F01E912D0D00C27B64 /* Realm.framework */; };
+		FA6BD2F71E912D0D00C27B64 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6BD2F11E912D0D00C27B64 /* RealmSwift.framework */; };
+		FA6BD2F81E912D0D00C27B64 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6BD2F21E912D0D00C27B64 /* RxCocoa.framework */; };
+		FA6BD2F91E912D0D00C27B64 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6BD2F31E912D0D00C27B64 /* RxSwift.framework */; };
 		FA90FDC21D18445100ACA9B1 /* Shakable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDC11D18445100ACA9B1 /* Shakable.swift */; };
 		FA90FDC41D1854F700ACA9B1 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA90FDC31D1854F700ACA9B1 /* FeedCell.xib */; };
 		FA90FDC61D18552D00ACA9B1 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDC51D18552D00ACA9B1 /* UITableView+Extension.swift */; };
+		FA9309FE1C68175400A5B947 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9309FD1C68175400A5B947 /* NotificationsViewController.swift */; };
+		FA930A001C68177300A5B947 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9309FF1C68177300A5B947 /* Notifications.storyboard */; };
 		FAA79A661C649F080060E30C /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A651C649F080060E30C /* FeedParser.swift */; };
 		FAA79A681C64AC460060E30C /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A671C64AC460060E30C /* Feed.swift */; };
 		FAA79A6A1C64D7270060E30C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA79A691C64D7270060E30C /* FeedCell.swift */; };
@@ -42,12 +46,6 @@
 		FAB24B211C62390E00F51394 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B201C62390E00F51394 /* LoginViewController.swift */; };
 		FAB24B241C624DFC00F51394 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B231C624DFB00F51394 /* User.swift */; };
 		FAB24B261C62604200F51394 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B251C62604200F51394 /* SessionManager.swift */; };
-		FAB24B2A1C62641000F51394 /* iOS in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B271C62641000F51394 /* iOS */; };
-		FAB24B2B1C62641000F51394 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B281C62641000F51394 /* Realm.framework */; };
-		FAB24B2C1C62641000F51394 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB24B291C62641000F51394 /* RealmSwift.framework */; };
-		FAFF407E1C5DF32A00DD760A /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407B1C5DF32A00DD760A /* Gloss.framework */; };
-		FAFF407F1C5DF32A00DD760A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */; };
-		FAFF40801C5DF32A00DD760A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF407D1C5DF32A00DD760A /* RxSwift.framework */; };
 		FAFF40841C5DF47F00DD760A /* GitHubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40831C5DF47F00DD760A /* GitHubApiClient.swift */; };
 		FAFF40861C5DF67500DD760A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40851C5DF67500DD760A /* Repository.swift */; };
 		FAFF40881C5E06C200DD760A /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40871C5E06C200DD760A /* Dependencies.swift */; };
@@ -72,7 +70,6 @@
 		FA0D3BE01C5F2168002C0307 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		FA0D3BE21C5F2193002C0307 /* GistListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistListViewController.swift; sourceTree = "<group>"; };
 		FA17F9CB1C65BA8900D7741E /* GistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistCell.swift; sourceTree = "<group>"; };
-		FA17F9CD1C65BF2F00D7741E /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		FA210BBB1C672E160016F589 /* DetailNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNavigationController.swift; sourceTree = "<group>"; };
 		FA210BBD1C672F820016F589 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		FA210BBF1C6744F00016F589 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -89,12 +86,17 @@
 		FA54B1C71C5A120C00D37363 /* githublarinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = githublarinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA54B1CB1C5A120C00D37363 /* githublarinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githublarinTests.swift; sourceTree = "<group>"; };
 		FA54B1CD1C5A120C00D37363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA54B1D61C5A14ED00D37363 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		FA9309FD1C68175400A5B947 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
-		FA9309FF1C68177300A5B947 /* Notifications.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
+		FA6BD2EE1E912D0D00C27B64 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		FA6BD2EF1E912D0D00C27B64 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
+		FA6BD2F01E912D0D00C27B64 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		FA6BD2F11E912D0D00C27B64 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		FA6BD2F21E912D0D00C27B64 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		FA6BD2F31E912D0D00C27B64 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		FA90FDC11D18445100ACA9B1 /* Shakable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shakable.swift; sourceTree = "<group>"; };
 		FA90FDC31D1854F700ACA9B1 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		FA90FDC51D18552D00ACA9B1 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		FA9309FD1C68175400A5B947 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		FA9309FF1C68177300A5B947 /* Notifications.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
 		FAA79A651C649F080060E30C /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
 		FAA79A671C64AC460060E30C /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		FAA79A691C64D7270060E30C /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -103,12 +105,6 @@
 		FAB24B201C62390E00F51394 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAB24B231C624DFB00F51394 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FAB24B251C62604200F51394 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		FAB24B271C62641000F51394 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Carthage/Build/iOS; sourceTree = "<group>"; };
-		FAB24B281C62641000F51394 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		FAB24B291C62641000F51394 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		FAFF407B1C5DF32A00DD760A /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
-		FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		FAFF407D1C5DF32A00DD760A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		FAFF40831C5DF47F00DD760A /* GitHubApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClient.swift; sourceTree = "<group>"; };
 		FAFF40851C5DF67500DD760A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		FAFF40871C5E06C200DD760A /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
@@ -119,14 +115,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB24B2A1C62641000F51394 /* iOS in Frameworks */,
-				FAB24B2B1C62641000F51394 /* Realm.framework in Frameworks */,
-				FAB24B2C1C62641000F51394 /* RealmSwift.framework in Frameworks */,
-				FA54B1D71C5A14ED00D37363 /* Alamofire.framework in Frameworks */,
-				FAFF407E1C5DF32A00DD760A /* Gloss.framework in Frameworks */,
-				FA17F9CE1C65BF2F00D7741E /* Kingfisher.framework in Frameworks */,
-				FAFF407F1C5DF32A00DD760A /* RxCocoa.framework in Frameworks */,
-				FAFF40801C5DF32A00DD760A /* RxSwift.framework in Frameworks */,
+				FA6BD2F41E912D0D00C27B64 /* Alamofire.framework in Frameworks */,
+				FA6BD2F51E912D0D00C27B64 /* Gloss.framework in Frameworks */,
+				FA6BD2F61E912D0D00C27B64 /* Realm.framework in Frameworks */,
+				FA6BD2F71E912D0D00C27B64 /* RealmSwift.framework in Frameworks */,
+				FA6BD2F81E912D0D00C27B64 /* RxCocoa.framework in Frameworks */,
+				FA6BD2F91E912D0D00C27B64 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,11 +163,10 @@
 		FA54B1AA1C5A120C00D37363 = {
 			isa = PBXGroup;
 			children = (
-				FAB24B271C62641000F51394 /* iOS */,
-				FAE49BBE1C623217009A02BC /* Carthage */,
 				FA54B1B51C5A120C00D37363 /* githublarin */,
 				FA54B1CA1C5A120C00D37363 /* githublarinTests */,
 				FA54B1B41C5A120C00D37363 /* Products */,
+				FA6BD2ED1E912D0D00C27B64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,6 +214,19 @@
 			path = githublarinTests;
 			sourceTree = "<group>";
 		};
+		FA6BD2ED1E912D0D00C27B64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA6BD2EE1E912D0D00C27B64 /* Alamofire.framework */,
+				FA6BD2EF1E912D0D00C27B64 /* Gloss.framework */,
+				FA6BD2F01E912D0D00C27B64 /* Realm.framework */,
+				FA6BD2F11E912D0D00C27B64 /* RealmSwift.framework */,
+				FA6BD2F21E912D0D00C27B64 /* RxCocoa.framework */,
+				FA6BD2F31E912D0D00C27B64 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAB24B221C62392D00F51394 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,20 +235,6 @@
 				FAB24B251C62604200F51394 /* SessionManager.swift */,
 			);
 			name = Login;
-			sourceTree = "<group>";
-		};
-		FAE49BBE1C623217009A02BC /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				FA17F9CD1C65BF2F00D7741E /* Kingfisher.framework */,
-				FAB24B281C62641000F51394 /* Realm.framework */,
-				FAB24B291C62641000F51394 /* RealmSwift.framework */,
-				FAFF407B1C5DF32A00DD760A /* Gloss.framework */,
-				FAFF407C1C5DF32A00DD760A /* RxCocoa.framework */,
-				FAFF407D1C5DF32A00DD760A /* RxSwift.framework */,
-				FA54B1D61C5A14ED00D37363 /* Alamofire.framework */,
-			);
-			name = Carthage;
 			sourceTree = "<group>";
 		};
 		FAEE26471C63042C0070A219 /* Repository */ = {
@@ -336,14 +328,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = chooblarin;
 				TargetAttributes = {
 					FA54B1B21C5A120C00D37363 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = H6T775QPW5;
+						LastSwiftMigration = 0830;
 					};
 					FA54B1C61C5A120C00D37363 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0830;
 						TestTargetID = FA54B1B21C5A120C00D37363;
 					};
 				};
@@ -502,8 +497,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -547,8 +544,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -567,6 +566,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -576,6 +576,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H6T775QPW5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -585,6 +586,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chooblarin.githublarin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -593,6 +595,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H6T775QPW5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -602,6 +605,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chooblarin.githublarin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -614,6 +618,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chooblarin.githublarinTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/githublarin.app/githublarin";
 			};
 			name = Debug;
@@ -626,6 +631,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chooblarin.githublarinTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/githublarin.app/githublarin";
 			};
 			name = Release;

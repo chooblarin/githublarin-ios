@@ -25,13 +25,13 @@ class RepositoryListViewController: UIViewController, UITableViewDataSource, UIT
 
     // MARK: - UITableViewDataSource
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repositories.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "RepositoryTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! RepositoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! RepositoryTableViewCell
         let repository = repositories[indexPath.row]
         cell.viewModel = repository
         return cell
@@ -39,8 +39,12 @@ class RepositoryListViewController: UIViewController, UITableViewDataSource, UIT
 
     func loadRepository() {
         GitHubAPIClient.sharedInstance.searchRepository("RxJava")
-            .subscribeNext { repositories -> Void in
-                self.repositories = repositories
-            }.addDisposableTo(self.disposeBag)
+            .subscribe(
+                onNext: { [weak self] (repos: [Repository]) in
+                    self?.repositories = repos
+                },
+                onError: { (error: Error) in
+                    debugPrint(error)
+                }).addDisposableTo(self.disposeBag)
     }
 }

@@ -4,7 +4,7 @@ import RxSwift
 class FeedViewController: UITableViewController {
 
     static func create() -> UIViewController {
-        let viewController = FeedViewController(style: .Plain)
+        let viewController = FeedViewController(style: .plain)
         viewController.title = "Feed"
         viewController.tabBarItem = UITabBarItem(title: "Feed", image: nil, selectedImage: nil)
         let navigationController = UINavigationController(rootViewController: viewController)
@@ -29,7 +29,7 @@ class FeedViewController: UITableViewController {
         refreshControl?.addTarget(
             self,
             action: #selector(FeedViewController.loadFeeds),
-            forControlEvents: UIControlEvents.ValueChanged)
+            for: UIControlEvents.valueChanged)
 
         tableView.register(FeedCell.self)
         tableView.estimatedRowHeight = 100.0
@@ -39,9 +39,9 @@ class FeedViewController: UITableViewController {
         loadFeeds()
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if "ShowFeedDetail" == segue.identifier {
-            let navigationController = segue.destinationViewController as! UINavigationController
+            let navigationController = segue.destination as! UINavigationController
             let detailWebViewController = navigationController.viewControllers.first as! DetailWebViewController
             let feedCell = sender as! FeedCell
             detailWebViewController.feed = feedCell.feed
@@ -50,11 +50,11 @@ class FeedViewController: UITableViewController {
 
     // MARK: UITableViewDataSource
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feeds.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: FeedCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.feed = feeds[indexPath.row]
         return cell
@@ -65,11 +65,11 @@ class FeedViewController: UITableViewController {
             .toArray()
             .subscribe { event in
                 switch event {
-                case .Next(let feeds):
+                case .next(let feeds):
                     self.feeds = feeds
-                case .Error(_):
+                case .error(_):
                     self.refreshControl?.endRefreshing()
-                case .Completed:
+                case .completed:
                     self.refreshControl?.endRefreshing()
                 }
             }

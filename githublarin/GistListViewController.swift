@@ -18,15 +18,15 @@ class GistListViewController: UIViewController {
 
     // MARK: - IBActions
 
-    @IBAction func changeSegment(sender: UISegmentedControl) {
+    @IBAction func changeSegment(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0: // My Gist
-            myGistsContainer.hidden = false
-            starredGistsConainer.hidden = true
+            myGistsContainer.isHidden = false
+            starredGistsConainer.isHidden = true
             
         case 1: // Starred Gist
-            myGistsContainer.hidden = true
-            starredGistsConainer.hidden = false
+            myGistsContainer.isHidden = true
+            starredGistsConainer.isHidden = false
 
         default: break
         }

@@ -22,21 +22,21 @@ class LoginViewController: UIViewController {
         return textField
     }()
     var signinButton: UIButton = {
-        let button = UIButton(type: UIButtonType.System)
-        button.setTitle("Sign in", forState: .Normal)
+        let button = UIButton(type: UIButtonType.system)
+        button.setTitle("Sign in", for: UIControlState())
         return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
 
         let welcomeLabel = UILabel()
         welcomeLabel.text = "GitHublarin"
-        welcomeLabel.font = UIFont.boldSystemFontOfSize(24.0)
+        welcomeLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
 
         let container = TextFieldContainer()
-        container.backgroundColor = UIColor.whiteColor()
+        container.backgroundColor = UIColor.white
 
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -59,66 +59,73 @@ class LoginViewController: UIViewController {
         ]
         view.addConstraint(NSLayoutConstraint(
             item: container,
-            attribute: .CenterY,
-            relatedBy: .Equal,
+            attribute: .centerY,
+            relatedBy: .equal,
             toItem: view,
-            attribute: .CenterY,
+            attribute: .centerY,
             multiplier: 1.0,
             constant: -64.0))
         var constraints = [NSLayoutConstraint]()
-        constraints += NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[welcomeLabel]-92-[container]-64-[signin]",
-            options: [.AlignAllCenterX],
+        constraints += NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[welcomeLabel]-92-[container]-64-[signin]",
+            options: [.alignAllCenterX],
             metrics: nil,
             views: views)
-        constraints += NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-32-[container]-32-|",
+        constraints += NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-32-[container]-32-|",
             options: [],
             metrics: nil,
             views: views)
-        constraints += NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|[username]|",
+        constraints += NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|[username]|",
             options: [],
             metrics: nil,
             views: views)
-        constraints += NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|[password]|",
+        constraints += NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|[password]|",
             options: [],
             metrics: nil,
             views: views)
-        constraints += NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|[username]-[password]|",
+        constraints += NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|[username]-[password]|",
             options: [],
             metrics: nil,
             views: views)
-        NSLayoutConstraint.activateConstraints(constraints)
+        NSLayoutConstraint.activate(constraints)
 
-        let username = usernameTextField.rx_text
-        let password = passwordTextField.rx_text
+        let username = usernameTextField.rx.text
+        let password = passwordTextField.rx.text
 
-        signinButton.enabled = false
-        let usernameValidation = username.map {!$0.isEmpty}.shareReplay(1)
-        let passwordValidation = password.map {!$0.isEmpty}.shareReplay(1)
+        signinButton.isEnabled = false
+        let usernameValidation = username.map { (text: String?) -> Bool in
+            if let str = text, !str.isEmpty {
+                return true
+            } else {
+                return false
+            }
+        }.shareReplay(1)
+        let passwordValidation = password.map { (text: String?) -> Bool in
+            if let str = text, !str.isEmpty {
+                return true
+            } else {
+                return false
+            }
+        }.shareReplay(1)
         let enableButton = Observable.combineLatest(usernameValidation, passwordValidation) { $0 && $1 }
-        enableButton.bindTo(signinButton.rx_enabled).addDisposableTo(disposeBag)
+        enableButton.bindTo(signinButton.rx.isEnabled).addDisposableTo(disposeBag)
 
-        signinButton.rx_tap.shareReplay(1)
+        signinButton.rx.tap.shareReplay(1)
             .flatMap { self.apiClient.login(
                 username: self.usernameTextField.text!,
                 password: self.passwordTextField.text!)
             }
-            .subscribe { event -> Void in
-                switch event {
-                case .Next(_):
+            .subscribe(
+                onNext: { [weak self] (user: User) in
                     let homeViewController =  HomeViewController()
-                    self.presentViewController(homeViewController, animated: true, completion: nil)
-
-                case .Error(let error):
-                    container.shake()
-                    print(error)
-
-                case .Completed: break
-                }
-            }.addDisposableTo(disposeBag)
+                    self?.present(homeViewController, animated: true, completion: nil)
+                }, onError: { (error: Error) in
+                    debugPrint(error)
+                })
+                .addDisposableTo(disposeBag)
     }
 }

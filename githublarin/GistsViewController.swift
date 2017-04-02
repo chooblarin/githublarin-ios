@@ -26,13 +26,20 @@ class GistsViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        apiClient.gists().subscribeNext { self.gists = $0 }.addDisposableTo(disposeBag)
+
+        apiClient.gists().subscribe(
+            onNext: { [weak self] (gists: [Gist]) in
+                self?.gists = gists
+            },
+            onError: { (error: Error) in
+                debugPrint(error)
+            })
+            .addDisposableTo(disposeBag)
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if "ShowGistDetail" == segue.identifier {
-            let navigationController = segue.destinationViewController as! UINavigationController
+            let navigationController = segue.destination as! UINavigationController
             let detailWebViewController = navigationController.viewControllers.first as! DetailWebViewController
             let gistCell = sender as! GistCell
             detailWebViewController.gist = gistCell.gist
@@ -41,12 +48,12 @@ class GistsViewController: UIViewController, UITableViewDataSource {
     
     // MARK: - UITableViewDataSource
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gists.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! GistCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! GistCell
         cell.gist = gists[indexPath.row]
         return cell
     }

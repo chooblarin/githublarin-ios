@@ -13,8 +13,8 @@ class GistCell: UITableViewCell {
     var gist: Gist? {
         didSet {
             if let avatarUrlString = gist?.owner.avatarUrl,
-                let avatarUrl = NSURL(string: avatarUrlString) {
-                    ownerImageView.kf_setImageWithURL(avatarUrl)
+                let avatarUrl = URL(string: avatarUrlString) {
+                ownerImageView.kf.setImage(with: avatarUrl)
             }
             nameLabel.text = gist?.id
         }

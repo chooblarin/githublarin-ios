@@ -6,13 +6,13 @@ class Animator: NSObject, UIViewControllerAnimatedTransitioning {
     let duration = 0.3
     var presenting = false
 
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
     }
 
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        guard let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey),
-              let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) else {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        guard let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
+              let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
                 return
         }
 
@@ -23,37 +23,39 @@ class Animator: NSObject, UIViewControllerAnimatedTransitioning {
         }
     }
 
-    func presentTransition(transitionContext: UIViewControllerContextTransitioning, toView: UIView, fromView: UIView) {
-        guard let containerView = transitionContext.containerView() else { return }
+    func presentTransition(_ transitionContext: UIViewControllerContextTransitioning, toView: UIView, fromView: UIView) {
+
+        let containerView = transitionContext.containerView
         containerView.insertSubview(toView, aboveSubview: fromView)
 
-        toView.frame = CGRectOffset(toView.frame, containerView.frame.size.width, 0)
-        UIView.animateWithDuration(transitionDuration(transitionContext),
+        toView.frame = toView.frame.offsetBy(dx: containerView.frame.size.width, dy: 0)
+        UIView.animate(withDuration: transitionDuration(using: transitionContext),
             delay: 0.05,
-            options: .CurveEaseInOut,
+            options: UIViewAnimationOptions(),
             animations: {
-                fromView.frame = CGRectOffset(fromView.frame, -self.distance, 0)
+                fromView.frame = fromView.frame.offsetBy(dx: -self.distance, dy: 0)
                 fromView.alpha = 0.7
 
                 toView.frame = containerView.frame
             },
             completion: { finished in
-                fromView.frame = CGRectOffset(fromView.frame, self.distance, 0)
+                fromView.frame = fromView.frame.offsetBy(dx: self.distance, dy: 0)
                 transitionContext.completeTransition(true)
             }
         )
     }
 
-    func dismissTransition(transitionContext: UIViewControllerContextTransitioning, toView: UIView, fromView: UIView) {
-        guard let containerView = transitionContext.containerView() else { return }
+    func dismissTransition(_ transitionContext: UIViewControllerContextTransitioning, toView: UIView, fromView: UIView) {
+
+        let containerView = transitionContext.containerView
         containerView.insertSubview(toView, belowSubview: fromView)
 
-        toView.frame = CGRectOffset(toView.frame, -self.distance, 0)
+        toView.frame = toView.frame.offsetBy(dx: -self.distance, dy: 0)
 
-        UIView.animateWithDuration(transitionDuration(transitionContext), delay:  0, options: .CurveEaseInOut,
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay:  0, options: UIViewAnimationOptions(),
             animations: {
-                fromView.frame = CGRectOffset(fromView.frame, containerView.frame.size.width, 0)
-                toView.frame = CGRectOffset(toView.frame, self.distance, 0)
+                fromView.frame = fromView.frame.offsetBy(dx: containerView.frame.size.width, dy: 0)
+                toView.frame = toView.frame.offsetBy(dx: self.distance, dy: 0)
                 toView.alpha = 1.0
             },
             completion: { (finished) -> Void in

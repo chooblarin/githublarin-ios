@@ -12,8 +12,8 @@ extension Shakable where Self: UIView {
         animation.autoreverses = true
         let centerX = self.center.x
         let centerY = self.center.y
-        animation.fromValue = NSValue(CGPoint: CGPointMake(centerX - 4, centerY))
-        animation.toValue = NSValue(CGPoint: CGPointMake(centerX + 4, centerY))
-        self.layer.addAnimation(animation, forKey: "position")
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: centerX - 4, y: centerY))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: centerX + 4, y: centerY))
+        self.layer.add(animation, forKey: "position")
     }
 }

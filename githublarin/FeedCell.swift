@@ -17,8 +17,8 @@ class FeedCell: UITableViewCell {
     var feed: Feed? {
         didSet {
             if let thumbnailUrlString = feed?.thumbnail,
-                let thumbnailUrl = NSURL(string: thumbnailUrlString) {
-                userImageView.kf_setImageWithURL(thumbnailUrl)
+                let thumbnailUrl = URL(string: thumbnailUrlString) {
+                userImageView.kf.setImage(with: thumbnailUrl)
             }
             titleLabel.text = feed?.title
             publishedAtLabel.text = feed?.publishedAt

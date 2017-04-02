@@ -1,18 +1,18 @@
 import Foundation
 import RxSwift
 
-class FeedParser: NSObject, NSXMLParserDelegate {
+class FeedParser: NSObject, XMLParserDelegate {
 
     // MARK: - Properties
 
-    var parser: NSXMLParser!
+    var parser: XMLParser!
     var feed: Feed?
     var cursor: String?
     var subject: ReplaySubject<Feed>!
 
-    init(contentsUrl: NSURL) {
+    init(contentsUrl: URL) {
         super.init()
-        parser = NSXMLParser(contentsOfURL: contentsUrl)
+        parser = XMLParser(contentsOf: contentsUrl)
         parser.delegate = self
     }
 
@@ -22,11 +22,11 @@ class FeedParser: NSObject, NSXMLParserDelegate {
         return subject.asObservable()
     }
 
-    func parserDidEndDocument(parser: NSXMLParser) {
+    func parserDidEndDocument(_ parser: XMLParser) {
         subject.onCompleted()
     }
 
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         switch elementName {
         case "id": fallthrough
         case "published": fallthrough
@@ -51,7 +51,7 @@ class FeedParser: NSObject, NSXMLParserDelegate {
         }
     }
 
-    func parser(parser: NSXMLParser, foundCharacters string: String) {
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
         guard let feed = feed, let cursor = cursor else { return }
 
         switch cursor {
@@ -65,7 +65,7 @@ class FeedParser: NSObject, NSXMLParserDelegate {
         self.cursor = nil
     }
 
-    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if "entry" == elementName {
             subject.onNext(feed!)
             feed = nil
