@@ -46,6 +46,8 @@
 		FAB24B211C62390E00F51394 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B201C62390E00F51394 /* LoginViewController.swift */; };
 		FAB24B241C624DFC00F51394 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B231C624DFB00F51394 /* User.swift */; };
 		FAB24B261C62604200F51394 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B251C62604200F51394 /* SessionManager.swift */; };
+		FAC4C7BC1E9528E00081BA9C /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4C7BA1E9528E00081BA9C /* Moya.framework */; };
+		FAC4C7BD1E9528E00081BA9C /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4C7BB1E9528E00081BA9C /* RxMoya.framework */; };
 		FAFF40841C5DF47F00DD760A /* GitHubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40831C5DF47F00DD760A /* GitHubApiClient.swift */; };
 		FAFF40861C5DF67500DD760A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40851C5DF67500DD760A /* Repository.swift */; };
 		FAFF40881C5E06C200DD760A /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40871C5E06C200DD760A /* Dependencies.swift */; };
@@ -105,6 +107,8 @@
 		FAB24B201C62390E00F51394 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAB24B231C624DFB00F51394 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FAB24B251C62604200F51394 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		FAC4C7BA1E9528E00081BA9C /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		FAC4C7BB1E9528E00081BA9C /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
 		FAFF40831C5DF47F00DD760A /* GitHubApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClient.swift; sourceTree = "<group>"; };
 		FAFF40851C5DF67500DD760A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		FAFF40871C5E06C200DD760A /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				FA6BD2F71E912D0D00C27B64 /* RealmSwift.framework in Frameworks */,
 				FA6BD2F81E912D0D00C27B64 /* RxCocoa.framework in Frameworks */,
 				FA6BD2F91E912D0D00C27B64 /* RxSwift.framework in Frameworks */,
+				FAC4C7BC1E9528E00081BA9C /* Moya.framework in Frameworks */,
+				FAC4C7BD1E9528E00081BA9C /* RxMoya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +223,8 @@
 		FA6BD2ED1E912D0D00C27B64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAC4C7BA1E9528E00081BA9C /* Moya.framework */,
+				FAC4C7BB1E9528E00081BA9C /* RxMoya.framework */,
 				FA6BD2EE1E912D0D00C27B64 /* Alamofire.framework */,
 				FA6BD2EF1E912D0D00C27B64 /* Gloss.framework */,
 				FA6BD2F01E912D0D00C27B64 /* Realm.framework */,
@@ -292,7 +300,7 @@
 				FA54B1AF1C5A120C00D37363 /* Sources */,
 				FA54B1B01C5A120C00D37363 /* Frameworks */,
 				FA54B1B11C5A120C00D37363 /* Resources */,
-				FA54B1D81C5A14FF00D37363 /* Run Script */,
+				FA54B1D81C5A14FF00D37363 /* Carthage copy frameworks */,
 			);
 			buildRules = (
 			);
@@ -388,7 +396,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FA54B1D81C5A14FF00D37363 /* Run Script */ = {
+		FA54B1D81C5A14FF00D37363 /* Carthage copy frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -401,8 +409,10 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 			);
-			name = "Run Script";
+			name = "Carthage copy frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
