@@ -55,6 +55,7 @@
 		FAC4C7C81E952EB90081BA9C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4C7C71E952EB90081BA9C /* Result.framework */; };
 		FAC4C7CD1E9539220081BA9C /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4C7CB1E9539220081BA9C /* Dependencies.swift */; };
 		FAC4C7CE1E9539220081BA9C /* GitHubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4C7CC1E9539220081BA9C /* GitHubApiClient.swift */; };
+		FAC4C7D31E9539C20081BA9C /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4C7D21E9539C20081BA9C /* GitHubService.swift */; };
 		FAFF40861C5DF67500DD760A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40851C5DF67500DD760A /* Repository.swift */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		FAC4C7C71E952EB90081BA9C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		FAC4C7CB1E9539220081BA9C /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dependencies.swift; path = Network/Dependencies.swift; sourceTree = "<group>"; };
 		FAC4C7CC1E9539220081BA9C /* GitHubApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubApiClient.swift; path = Network/GitHubApiClient.swift; sourceTree = "<group>"; };
+		FAC4C7D21E9539C20081BA9C /* GitHubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
 		FAFF40851C5DF67500DD760A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -272,6 +274,7 @@
 		FAC4C7CF1E9539280081BA9C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FAC4C7D21E9539C20081BA9C /* GitHubService.swift */,
 				FAC4C7CB1E9539220081BA9C /* Dependencies.swift */,
 				FAC4C7CC1E9539220081BA9C /* GitHubApiClient.swift */,
 			);
@@ -453,6 +456,7 @@
 			files = (
 				FA210BBC1C672E160016F589 /* DetailNavigationController.swift in Sources */,
 				FA0412851C61EE4800F5CE01 /* DetailWebViewController.swift in Sources */,
+				FAC4C7D31E9539C20081BA9C /* GitHubService.swift in Sources */,
 				FA90FDC61D18552D00ACA9B1 /* UITableView+Extension.swift in Sources */,
 				FA03052F1C650540002D45A0 /* Gist.swift in Sources */,
 				FAA79A6A1C64D7270060E30C /* FeedCell.swift in Sources */,
