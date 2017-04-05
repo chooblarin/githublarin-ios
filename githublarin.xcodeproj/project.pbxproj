@@ -48,6 +48,11 @@
 		FAB24B261C62604200F51394 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB24B251C62604200F51394 /* SessionManager.swift */; };
 		FAC4C7BC1E9528E00081BA9C /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4C7BA1E9528E00081BA9C /* Moya.framework */; };
 		FAC4C7BD1E9528E00081BA9C /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4C7BB1E9528E00081BA9C /* RxMoya.framework */; };
+		FAC4C7BF1E952A940081BA9C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4C7BE1E952A940081BA9C /* AppCoordinator.swift */; };
+		FAC4C7C21E952ACD0081BA9C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4C7C11E952ACD0081BA9C /* Coordinator.swift */; };
+		FAC4C7C41E952B700081BA9C /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4C7C31E952B700081BA9C /* AuthCoordinator.swift */; };
+		FAC4C7C61E952CF10081BA9C /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4C7C51E952CF10081BA9C /* HomeCoordinator.swift */; };
+		FAC4C7C81E952EB90081BA9C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4C7C71E952EB90081BA9C /* Result.framework */; };
 		FAFF40841C5DF47F00DD760A /* GitHubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40831C5DF47F00DD760A /* GitHubApiClient.swift */; };
 		FAFF40861C5DF67500DD760A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40851C5DF67500DD760A /* Repository.swift */; };
 		FAFF40881C5E06C200DD760A /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40871C5E06C200DD760A /* Dependencies.swift */; };
@@ -109,6 +114,11 @@
 		FAB24B251C62604200F51394 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		FAC4C7BA1E9528E00081BA9C /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		FAC4C7BB1E9528E00081BA9C /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
+		FAC4C7BE1E952A940081BA9C /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppCoordinator.swift; path = Coordinator/AppCoordinator.swift; sourceTree = "<group>"; };
+		FAC4C7C11E952ACD0081BA9C /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FAC4C7C31E952B700081BA9C /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		FAC4C7C51E952CF10081BA9C /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		FAC4C7C71E952EB90081BA9C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		FAFF40831C5DF47F00DD760A /* GitHubApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClient.swift; sourceTree = "<group>"; };
 		FAFF40851C5DF67500DD760A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		FAFF40871C5E06C200DD760A /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
@@ -125,6 +135,7 @@
 				FA6BD2F71E912D0D00C27B64 /* RealmSwift.framework in Frameworks */,
 				FA6BD2F81E912D0D00C27B64 /* RxCocoa.framework in Frameworks */,
 				FA6BD2F91E912D0D00C27B64 /* RxSwift.framework in Frameworks */,
+				FAC4C7C81E952EB90081BA9C /* Result.framework in Frameworks */,
 				FAC4C7BC1E9528E00081BA9C /* Moya.framework in Frameworks */,
 				FAC4C7BD1E9528E00081BA9C /* RxMoya.framework in Frameworks */,
 			);
@@ -193,6 +204,7 @@
 				FA210BBB1C672E160016F589 /* DetailNavigationController.swift */,
 				FA210BBD1C672F820016F589 /* Animator.swift */,
 				FA0412841C61EE4800F5CE01 /* DetailWebViewController.swift */,
+				FAC4C7C01E952AB90081BA9C /* Coordinator */,
 				FAFF40891C5E06DB00DD760A /* API */,
 				FAEE26481C6304480070A219 /* Feed */,
 				FAEE264B1C6305260070A219 /* Gist */,
@@ -223,6 +235,7 @@
 		FA6BD2ED1E912D0D00C27B64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAC4C7C71E952EB90081BA9C /* Result.framework */,
 				FAC4C7BA1E9528E00081BA9C /* Moya.framework */,
 				FAC4C7BB1E9528E00081BA9C /* RxMoya.framework */,
 				FA6BD2EE1E912D0D00C27B64 /* Alamofire.framework */,
@@ -243,6 +256,17 @@
 				FAB24B251C62604200F51394 /* SessionManager.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		FAC4C7C01E952AB90081BA9C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FAC4C7C11E952ACD0081BA9C /* Coordinator.swift */,
+				FAC4C7BE1E952A940081BA9C /* AppCoordinator.swift */,
+				FAC4C7C31E952B700081BA9C /* AuthCoordinator.swift */,
+				FAC4C7C51E952CF10081BA9C /* HomeCoordinator.swift */,
+			);
+			name = Coordinator;
 			sourceTree = "<group>";
 		};
 		FAEE26471C63042C0070A219 /* Repository */ = {
@@ -411,6 +435,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			name = "Carthage copy frameworks";
 			outputPaths = (
@@ -436,6 +461,7 @@
 				FAB24B261C62604200F51394 /* SessionManager.swift in Sources */,
 				FA3C4E8E1C68192E00919956 /* MyPageViewController.swift in Sources */,
 				FA210BC01C6744F00016F589 /* UIColor.swift in Sources */,
+				FAC4C7C41E952B700081BA9C /* AuthCoordinator.swift in Sources */,
 				FAFF40841C5DF47F00DD760A /* GitHubApiClient.swift in Sources */,
 				FA06CFE11C5E3D6000C6341F /* RepositoryTableViewCell.swift in Sources */,
 				FA0D3BDF1C5F211D002C0307 /* HomeViewController.swift in Sources */,
@@ -444,12 +470,15 @@
 				FA210BBE1C672F820016F589 /* Animator.swift in Sources */,
 				FA17F9CC1C65BA8900D7741E /* GistCell.swift in Sources */,
 				FAA79A6E1C64E9AA0060E30C /* FeedResponse.swift in Sources */,
+				FAC4C7C21E952ACD0081BA9C /* Coordinator.swift in Sources */,
 				FAA79A661C649F080060E30C /* FeedParser.swift in Sources */,
 				FA2F411A1C69AD3E007971B7 /* GistsViewController.swift in Sources */,
+				FAC4C7BF1E952A940081BA9C /* AppCoordinator.swift in Sources */,
 				FA9309FE1C68175400A5B947 /* NotificationsViewController.swift in Sources */,
 				FA0D3BE31C5F2193002C0307 /* GistListViewController.swift in Sources */,
 				FAB24B241C624DFC00F51394 /* User.swift in Sources */,
 				FA90FDC21D18445100ACA9B1 /* Shakable.swift in Sources */,
+				FAC4C7C61E952CF10081BA9C /* HomeCoordinator.swift in Sources */,
 				FA54B1B91C5A120C00D37363 /* RepositoryListViewController.swift in Sources */,
 				FA54B1B71C5A120C00D37363 /* AppDelegate.swift in Sources */,
 				FAB24B211C62390E00F51394 /* LoginViewController.swift in Sources */,

@@ -5,13 +5,14 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var coordinator: Coordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         // navigation bar style
         let navigationBarAppearance = UINavigationBar.appearance()
-        navigationBarAppearance.tintColor = UIColor(hex: 0xCDDC39)
-        navigationBarAppearance.barTintColor = UIColor(hex: 0x330089)
+        navigationBarAppearance.barTintColor = UIColor.mainColor
+        navigationBarAppearance.tintColor = UIColor.accentColor
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
 
         // status bar style
@@ -19,16 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Realm.Configuration.defaultConfiguration = realmConfig()
 
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let sessionManager = SessionManager.sharedInstance
-        let realm = try! Realm()
-        if let _ = sessionManager.getSession(realm) {
-            self.window?.rootViewController = HomeViewController()
-
-        } else {
-            self.window?.rootViewController = LoginViewController()
-        }
-        self.window?.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let navigationController = UINavigationController()
+        window?.rootViewController = navigationController
+        let coordinator = AppCoordinator(navigationController: navigationController)
+        coordinator.start()
+        self.coordinator = coordinator
+        window?.makeKeyAndVisible()
         return true
     }
 
@@ -43,3 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension UIColor {
+    static var mainColor: UIColor {
+        return UIColor(hex: 0x330089)
+    }
+    static var accentColor: UIColor {
+        return UIColor(hex: 0xCDDC39)
+    }
+    
+}
