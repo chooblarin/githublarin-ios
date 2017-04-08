@@ -56,6 +56,7 @@
 		FAC4C7CD1E9539220081BA9C /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4C7CB1E9539220081BA9C /* Dependencies.swift */; };
 		FAC4C7CE1E9539220081BA9C /* GitHubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4C7CC1E9539220081BA9C /* GitHubApiClient.swift */; };
 		FAC4C7D31E9539C20081BA9C /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4C7D21E9539C20081BA9C /* GitHubService.swift */; };
+		FAF948EF1E997D35009415D7 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF948EE1E997D35009415D7 /* SnapKit.framework */; };
 		FAFF40861C5DF67500DD760A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF40851C5DF67500DD760A /* Repository.swift */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +124,7 @@
 		FAC4C7CB1E9539220081BA9C /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dependencies.swift; path = Network/Dependencies.swift; sourceTree = "<group>"; };
 		FAC4C7CC1E9539220081BA9C /* GitHubApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubApiClient.swift; path = Network/GitHubApiClient.swift; sourceTree = "<group>"; };
 		FAC4C7D21E9539C20081BA9C /* GitHubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
+		FAF948EE1E997D35009415D7 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		FAFF40851C5DF67500DD760A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 				FAC4C7C81E952EB90081BA9C /* Result.framework in Frameworks */,
 				FAC4C7BC1E9528E00081BA9C /* Moya.framework in Frameworks */,
 				FAC4C7BD1E9528E00081BA9C /* RxMoya.framework in Frameworks */,
+				FAF948EF1E997D35009415D7 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +240,7 @@
 		FA6BD2ED1E912D0D00C27B64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAF948EE1E997D35009415D7 /* SnapKit.framework */,
 				FAC4C7C71E952EB90081BA9C /* Result.framework */,
 				FAC4C7BA1E9528E00081BA9C /* Moya.framework */,
 				FAC4C7BB1E9528E00081BA9C /* RxMoya.framework */,
@@ -439,6 +443,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			name = "Carthage copy frameworks";
 			outputPaths = (
