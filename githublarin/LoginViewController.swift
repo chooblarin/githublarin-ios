@@ -1,17 +1,19 @@
 import UIKit
-
 import RxSwift
+import SnapKit
 
 class LoginViewController: UIViewController {
 
   class TextFieldContainer: UIView, Shakable {}
 
-  // MARK: - Properties
-  var user = PublishSubject<User>()
-  let disposeBag = DisposeBag()
-  let apiClient = GitHubAPIClient.sharedInstance
-
-  var usernameTextField: UITextField = {
+  let welcomeLabel: UILabel = {
+    let label = UILabel()
+    label.text = "GitHublarin"
+    label.font = UIFont.boldSystemFont(ofSize: 24.0)
+    return label
+  }()
+  let container = TextFieldContainer()
+  let usernameTextField: UITextField = {
     let textField = UITextField()
     textField.keyboardType = .asciiCapable
     textField.autocapitalizationType = .none
@@ -19,18 +21,24 @@ class LoginViewController: UIViewController {
     textField.placeholder = "Username"
     return textField
   }()
-  var passwordTextField: UITextField = {
+  let passwordTextField: UITextField = {
     let textField = UITextField()
     textField.keyboardType = .asciiCapable
     textField.isSecureTextEntry = true
     textField.placeholder = "Password"
     return textField
   }()
-  var signinButton: UIButton = {
-    let button = UIButton(type: UIButtonType.system)
-    button.setTitle("Sign in", for: UIControlState())
+  let signinButton: UIButton = {
+    let button = UIButton(type: .system)
+    button.setTitle("Sign in", for: .normal)
     return button
   }()
+
+  // MARK: - Properties
+
+  var user = PublishSubject<User>()
+  let disposeBag = DisposeBag()
+  let apiClient = GitHubAPIClient.sharedInstance
 
   init(user: PublishSubject<User>) {
     self.user = user
@@ -43,69 +51,8 @@ class LoginViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor.white
 
-    let welcomeLabel = UILabel()
-    welcomeLabel.text = "GitHublarin"
-    welcomeLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
-
-    let container = TextFieldContainer()
-    container.backgroundColor = UIColor.white
-
-    welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
-    container.translatesAutoresizingMaskIntoConstraints = false
-    usernameTextField.translatesAutoresizingMaskIntoConstraints = false
-    passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-    signinButton.translatesAutoresizingMaskIntoConstraints = false
-
-    container.addSubview(usernameTextField)
-    container.addSubview(passwordTextField)
-    view.addSubview(welcomeLabel)
-    view.addSubview(container)
-    view.addSubview(signinButton)
-
-    let views: [String: AnyObject] = [
-      "welcomeLabel": welcomeLabel,
-      "container": container,
-      "username": usernameTextField,
-      "password": passwordTextField,
-      "signin": signinButton,
-    ]
-    view.addConstraint(NSLayoutConstraint(
-      item: container,
-      attribute: .centerY,
-      relatedBy: .equal,
-      toItem: view,
-      attribute: .centerY,
-      multiplier: 1.0,
-      constant: -64.0))
-    var constraints = [NSLayoutConstraint]()
-    constraints += NSLayoutConstraint.constraints(
-      withVisualFormat: "V:[welcomeLabel]-92-[container]-64-[signin]",
-      options: [.alignAllCenterX],
-      metrics: nil,
-      views: views)
-    constraints += NSLayoutConstraint.constraints(
-      withVisualFormat: "H:|-32-[container]-32-|",
-      options: [],
-      metrics: nil,
-      views: views)
-    constraints += NSLayoutConstraint.constraints(
-      withVisualFormat: "H:|[username]|",
-      options: [],
-      metrics: nil,
-      views: views)
-    constraints += NSLayoutConstraint.constraints(
-      withVisualFormat: "H:|[password]|",
-      options: [],
-      metrics: nil,
-      views: views)
-    constraints += NSLayoutConstraint.constraints(
-      withVisualFormat: "V:|[username]-[password]|",
-      options: [],
-      metrics: nil,
-      views: views)
-    NSLayoutConstraint.activate(constraints)
+    setupUI()
 
     let username = usernameTextField.rx.text
     let password = passwordTextField.rx.text
@@ -133,5 +80,40 @@ class LoginViewController: UIViewController {
       }
       .bindTo(user)
       .addDisposableTo(disposeBag)
+  }
+
+  private func setupUI() {
+    view.backgroundColor = .white
+    container.backgroundColor = .white
+
+    container.addSubview(usernameTextField)
+    usernameTextField.snp.makeConstraints { make in
+      make.top.equalTo(container)
+      make.left.equalTo(container)
+      make.right.equalTo(container)
+    }
+    container.addSubview(passwordTextField)
+    passwordTextField.snp.makeConstraints { make in
+      make.top.equalTo(usernameTextField.snp.bottom).offset(20)
+      make.left.equalTo(container)
+      make.right.equalTo(container)
+      make.bottom.equalTo(container)
+    }
+    view.addSubview(container)
+    container.snp.makeConstraints { make in
+      make.centerY.equalTo(view).offset(-64)
+      make.left.equalTo(view).offset(40)
+      make.right.equalTo(view).offset(-40)
+    }
+    view.addSubview(welcomeLabel)
+    welcomeLabel.snp.makeConstraints { make in
+      make.centerX.equalTo(view)
+      make.bottom.equalTo(container.snp.top).offset(-92)
+    }
+    view.addSubview(signinButton)
+    signinButton.snp.makeConstraints { make in
+      make.centerX.equalTo(view)
+      make.top.equalTo(container.snp.bottom).offset(64)
+    }
   }
 }
